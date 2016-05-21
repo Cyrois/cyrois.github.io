@@ -1,5 +1,8 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
 	<h2>Blog</h2>
+	<p>This is the page where I talk about random things that happen in my life or that I feel opinionated about.</p>
+	<iframe width="420" height="315" src="https://www.youtube.com/embed/mqG3ScNNNSA" frameborder="0" allowfullscreen></iframe>
+	
 </div>
 <div class="col-md-2"></div>
