@@ -5,7 +5,7 @@
 		<!-- left column for picture and other info -->
 		<div class="col-md-4">
 			<!-- headshot -->
-			<img class="headshot" src="headshot.JPG"/>
+			<img class="headshot" src="/images/headshot.JPG"/>
 			
 			<!-- skills -->
 			<h2>Skills</h2>
