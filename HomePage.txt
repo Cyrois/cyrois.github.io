@@ -1,1 +1,1 @@
-<img height="100%" width="100%" src="/images/home.jpg"/>
+<img height="100%" width="100%" overflow="hidden" src="/images/home.jpg"/>
