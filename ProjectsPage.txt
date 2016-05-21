@@ -1,36 +1,60 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
+	<div class="row">
 	<h2 class="underline">Projects</h2>
+	</div>
 	
-	<h4>UBC Lost-n-Found</h4>
-	<h5>March, 2016 - April, 2016</h5>
-	<p>Created a website in a team of 4 engineers. A LAMP stack was used to create the website. The goal of the project was to create a lost-and-found web page specific to UBC.</p>
-	
-	<hr>
-	
-	<h4>Recycling Bin Game</h4>
-	<h5>September, 2015 - April, 2016</h5>
-	<p>Created a system that would count the number of items that were placed in a recycling station at the University of British Columbia. A web game was also created to help teach users where specific recyclable items belonged. The goal of the project was to encourage campus users to recycle properly.</p>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/TIyPAyBPbdI" frameborder="0" allowfullscreen></iframe>
+	<div class="row">
+		<h4>UBC Lost-n-Found</h4>
+		<h5>March, 2016 - April, 2016</h5>
+		<p>Created a website in a team of 4 engineers. A LAMP stack was used to create the website. The goal of the project was to create a lost-and-found web page specific to UBC.</p>
+	</div>
 	
 	<hr>
 	
-	<h4>Phone Lock Mechanism</h4>
-	<h5>October, 2015 - December, 2015</h5>
-	<p>Created a prototype android application to present a new security mechanism that would allow for an adversary watch an individual unlock their phone several times but still be unable to gain knowledge of the password.</p>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/AKmjpt0Xp0M" frameborder="0" allowfullscreen></iframe>
+	<div class="row">
+		<div class="col-md-6 leftProjectBox">
+		<h4>Recycling Bin Game</h4>
+		<h5>September, 2015 - April, 2016</h5>
+		<p>Created a system that would count the number of items that were placed in a recycling station at the University of British Columbia. A web game was also created to help teach users where specific recyclable items belonged. The goal of the project was to encourage campus users to recycle properly.</p>
+		</div>
+		<div class="col-md-6">
+		<iframe width="100%" src="https://www.youtube.com/embed/TIyPAyBPbdI" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+		
+	<hr>
+	
+	<div class="row">
+		<div class="col-md-6 leftProjectBox">
+			<iframe width="100%" src="https://www.youtube.com/embed/AKmjpt0Xp0M" frameborder="0" allowfullscreen></iframe>
+		</div>
+		
+		<div class="col-md-6">
+			<h4>Phone Lock Mechanism</h4>
+			<h5>October, 2015 - December, 2015</h5>
+			<p>Created a prototype android application to present a new security mechanism that would allow for an adversary watch an individual unlock their phone several times but still be unable to gain knowledge of the password.</p>
+		</div>
+		
+	</div>
+
+	<hr>
+	
+	<div class="row">
+		<h4>Home Security System</h4>
+		<h5>January, 2014 - April, 2014</h5>
+		<p>Created a system that would automatically detect motion in front of a camera and proceed to take pictures of the adversary and store the pictures onto a computer (Altera DE2).</p>
+	</div>
 	
 	<hr>
 	
-	<h4>Home Security System</h4>
-	<h5>January, 2014 - April, 2014</h5>
-	<p>Created a system that would automatically detect motion in front of a camera and proceed to take pictures of the adversary and store the pictures onto a computer (Altera DE2).</p>
+	<div class="row">
 	
-	<hr>
+		<h4>Tidal Wave Grapher</h4>
+		<h5>January, 2014 - April, 2014</h5>
+		<p>Created an Android application that would automatically scrape tidal wave data from online sources and present the data on a handheld device. The application also notified the user of the closest bouy system.</p>
 	
-	<h4>Tidal Wave Grapher</h4>
-	<h5>January, 2014 - April, 2014</h5>
-	<p>Created an Android application that would automatically scrape tidal wave data from online sources and present the data on a handheld device. The application also notified the user of the closest bouy system.</p>
+	</div>
 	
 </div>
 <div class="col-md-2"></div>

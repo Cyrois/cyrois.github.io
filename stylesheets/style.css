@@ -12,3 +12,11 @@ body { padding-top: 50px; }
 .headerIcon {
 	height:100%;
 }
+
+.leftProjectBox {
+	padding-left: 0px;
+}
+
+.contactIcon {
+	padding-right: 5px;
+}

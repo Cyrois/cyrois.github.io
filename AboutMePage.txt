@@ -14,8 +14,10 @@
 				<li>Python</li>
 				<li>Javascript</li>
 				<li>C++/C</li>
-				<li>MySql</li>
+				<li>SQL</li>
 				<li>PHP</li>
+				<li>HTML</li>
+				<li>CSS/SASS</li>
 			</ul>
 			
 			<h3>Favourite Quotes</h3>
