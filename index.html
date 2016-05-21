@@ -11,8 +11,16 @@
 				$("#mainBody").load("AboutMePage.txt");
 			});
 			
-			$("#resumeButton").click(function(){
-				$("#mainBody").load("test.txt");
+			$("#ProjectsButton").click(function(){
+				$("#mainBody").load("ProjectsPage.txt");
+			});
+			
+			$("#BlogButton").click(function(){
+				$("#mainBody").load("BlogPage.txt");
+			});
+			
+			$("#ContactMeButton").click(function(){
+				$("#mainBody").load("ContactPage.txt");
 			});
 		});
 		</script>
@@ -32,9 +40,9 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 					  <li id="AboutMeButton"><a href="#">About Me</a></li>
-					  <li><a href="#">Projects</a></li>
-					  <li><a href="#">Blog</a></li> 				  
-					  <li><a href="#">Contact Me</a></li> 
+					  <li id="ProjectsButton"><a href="#">Projects</a></li>
+					  <li id="BlogButton"><a href="#">Blog</a></li> 				  
+					  <li id="ContactMeButton"><a href="#">Contact Me</a></li> 
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 					  <li><a href="Calvin_Chan_Resume.pdf" target="_blank"><span class="glyphicon glyphicon-download-alt"></span> Download Resume</a></li>
