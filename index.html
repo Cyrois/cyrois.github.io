@@ -7,8 +7,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script>
 		$(document).ready(function(){
+			$("#AboutMeButton").click(function(){
+				$("#mainBody").load("AboutMePage.txt");
+			});
+			
 			$("#resumeButton").click(function(){
-				console.log("clicked");
 				$("#mainBody").load("test.txt");
 			});
 		});
@@ -28,18 +31,19 @@
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-					  <li id="test" class="active"><a href="#">About Me</a></li>
-					  <li id="resumeButton"><a href="#">Resume</a></li>
+					  <li id="AboutMeButton"><a href="#">About Me</a></li>
 					  <li><a href="#">Projects</a></li>
 					  <li><a href="#">Blog</a></li> 				  
 					  <li><a href="#">Contact Me</a></li> 
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					  <li><a href="Calvin_Chan_Resume.pdf" target="_blank"><span class="glyphicon glyphicon-download-alt"></span> Download Resume</a></li>
 					</ul>
 				</div><!-- collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
 		
-		<div id="mainBody" class="body">
-			<p> test </p>
+		<div id="mainBody" class="row body">
 		</div>
 	</body>	
 </html>
