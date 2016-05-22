@@ -23,7 +23,12 @@
 
 .contactIcon {
 	padding-right: 5px;
-	font-size: 2vw;
+	font-size: 1vw;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.contactInfo {
 }
 
 .aboutIcon {
@@ -31,4 +36,8 @@
 	text-align: center;
 	display: block;
 	margin-top: 25px;
+}
+
+.shadow {
+	box-shadow: 10px 10px grey;
 }
