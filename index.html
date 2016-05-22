@@ -8,29 +8,36 @@
 		
 		<script>
 		$(document).ready(function(){
-			$("#home").click(function(){
+			$("#home").click(function(e){
+				e.preventDefault();
 				$('html,body').animate({
 				scrollTop: $("#mainBody").offset().top},
 				'slow');
 			});
 			
-			$("#AboutMeButton").click(function(){
+			$("#AboutMeButton").click(function(e){
+				e.preventDefault();
 				$('html,body').animate({
-				scrollTop: $("#aboutMeBody").offset().top},
+				scrollTop: $("#aboutMeBody").offset().top - 50},
 				'slow');
 			});
 			
-			$("#ProjectsButton").click(function(){
+			$("#ProjectsButton").click(function(e){
+				e.preventDefault();
 				$('html,body').animate({
-				scrollTop: $("#projectsBody").offset().top},
+				scrollTop: $("#projectsBody").offset().top - 50},
 				'slow');
 			});
 			
-			$("#BlogButton").click(function(){
-				$("#mainBody").load("BlogsPage.txt");
+			$("#BlogButton").click(function(e){
+				e.preventDefault();
+				$('html,body').animate({
+				scrollTop: $("#blogsBody").offset().top - 50},
+				'slow');
 			});
 			
-			$("#ContactMeButton").click(function(){
+			$("#ContactMeButton").click(function(e){
+				e.preventDefault();
 				$('html,body').animate({
 				scrollTop: $("#contactMeBody").offset().top},
 				'slow');
@@ -275,7 +282,7 @@
 			<div class="col-md-2"></div>
 		</div>
 		
-		<div id="contactMeBody" class="row">
+		<div id="blogsBody" class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="row">
