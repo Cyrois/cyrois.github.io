@@ -17,7 +17,20 @@
 				<li>SQL</li>
 				<li>PHP</li>
 				<li>HTML</li>
-				<li>CSS/SASS</li>
+				<li>CSS/SASS/Bootstrap</li>
+			</ul>
+			
+			<h2>Related Skills/Experience</h2>
+			<ul>
+				<li>Windows/Unix</li>
+				<li>Atlassian</li>
+				<li>Maven</li>
+				<li>Grunt</li>
+				<li>Selenium</li>
+				<li>JUnit</li>
+				<li>Agile</li>
+				<li>Git</li>
+				<li>MVC</li>
 			</ul>
 			
 			<h3>Favourite Quotes</h3>
@@ -33,7 +46,8 @@
 			<div class="row">
 				<!-- space for icon -->
 				<div class="col-md-2">
-					<span class="glyphicon glyphicon-book"></span>
+					<h4></h4>
+					<span class="glyphicon glyphicon-book aboutIcon"></span>
 				</div>
 				
 				<!-- space for info -->
@@ -49,7 +63,7 @@
 			<div class="row">
 				<!-- space for icon -->
 				<div class="col-md-2">
-					<span class="glyphicon glyphicon-briefcase headerIcon"></span>
+					<span class="glyphicon glyphicon-briefcase aboutIcon"></span>
 				</div>
 				
 				<!-- space for info -->
@@ -110,7 +124,7 @@
 			<div class="row">
 				<!-- space for icon -->
 				<div class="col-md-2">
-					<span class="glyphicon glyphicon-play"></span>
+					<span class="glyphicon glyphicon-play aboutIcon"></span>
 				</div>
 				
 				<!-- space for info -->

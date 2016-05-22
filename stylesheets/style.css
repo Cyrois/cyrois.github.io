@@ -1,4 +1,8 @@
-body { padding-top: 50px; }
+.home {
+	overflow-x:hidden;
+	width:100%;
+	height:100%;
+}
 
 .headshot {
 	width:100%;
@@ -19,4 +23,12 @@ body { padding-top: 50px; }
 
 .contactIcon {
 	padding-right: 5px;
+	font-size: 2vw;
+}
+
+.aboutIcon {
+	font-size: 2vw;
+	text-align: center;
+	display: block;
+	margin-top: 25px;
 }
