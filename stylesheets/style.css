@@ -1,59 +1,122 @@
-.home {
-	overflow-x:hidden;
-	width:100%;
-	height:100%;
+p, li {
+    font-size: 16pt;
+}
+
+.section p, .section li, .section h1, .section h2, .section h3, .section h4 {
+    color: white;
+}
+
+#aboutMe p, #aboutMe h3 {
+    color: black;
+}
+
+nav .nav-wrapper ul a{
+    font-size: 14pt;
+}
+
+#other-projects-carousel {
+    height: 700px;
+}
+
+#other-projects-carousel .carousel-item {
+    width: 400px;
+    height: 500px;
+}
+
+.front-end-row {
+    background-color: rgb(255, 193, 7);
+}
+
+.back-end-row {
+    background-color: rgb(76, 175, 80);
+}
+
+.other-row {
+    background-color: rgba(248, 148, 6, 1);
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.padding-1em {
+    padding: 1em 0 1em 0;
+}
+
+.padding-bottom-2em {
+    padding-bottom: 2em;
+}
+
+.margin-1em {
+    margin: 1em 0 1em 0;
 }
 
 .headshot {
 	margin-top: 2em;
-    width: 100%;
+    max-width: 300px;
     border-radius: 50%;
 }
 
 .underline {
-	text-decoration:none;
-	border-bottom:2px solid;
+    text-decoration: underline
 }
 
-.headerIcon {
-	height:100%;
+#workCarousel {
+    height: 50vh;
 }
 
-.leftProjectBox {
-	padding-left: 0px;
+/* just for jsfiddle */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v18/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
 }
 
-.contactIcon {
-	padding-right: 5px;
-	font-size: 1vw;
-	text-align: center;
-	vertical-align: middle;
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.contactInfo {
+.middle-indicator{
+    position:absolute;
+    top:45%;
+}
+.middle-indicator-text{
+    font-size: 4.2rem;
+}
+a.middle-indicator-text{
+    color:white !important;
+}
+.content-indicator{
+    width: 64px;
+    height: 64px;
+    background: none;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px; 
 }
 
-.aboutIcon {
-	font-size: 2vw;
-	text-align: center;
-	display: block;
-	margin-top: 25px;
+ul.pointed {
+    padding-left: 40px !important; 
+    list-style-type: disc !important;
 }
 
-.shadow {
-	box-shadow: 10px 10px grey;
+ul.pointed>li {
+    list-style-type: disc !important;
 }
 
-.projectRow {
-	max-height:300px;
-}
-
-.otherProjectDescription {
-	padding-top:50px;
-}
-
-.projectPicture {
-	max-height:300px;
-	max-width:300px;
-	height:100%;
+.card.medium {
+    height: 600px;
 }

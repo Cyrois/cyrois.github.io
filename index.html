@@ -2,332 +2,396 @@
 <html>
 	<head>
 		<title>Calvin Chan</title>
-		<link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
-		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		
-		<script>
-		$(document).ready(function(){
-			$("#home").click(function(e){
-				e.preventDefault();
-				$('html,body').animate({
-				scrollTop: $("#mainBody").offset().top},
-				'slow');
-			});
-			
-			$("#AboutMeButton").click(function(e){
-				e.preventDefault();
-				$('html,body').animate({
-				scrollTop: $("#aboutMeBody").offset().top - 50},
-				'slow');
-			});
-			
-			$("#ProjectsButton").click(function(e){
-				e.preventDefault();
-				$('html,body').animate({
-				scrollTop: $("#projectsBody").offset().top - 50},
-				'slow');
-			});
-			
-			$("#BlogButton").click(function(e){
-				e.preventDefault();
-				$('html,body').animate({
-				scrollTop: $("#blogsBody").offset().top - 50},
-				'slow');
-			});
-			
-			$("#ContactMeButton").click(function(e){
-				e.preventDefault();
-				$('html,body').animate({
-				scrollTop: $("#contactMeBody").offset().top},
-				'slow');
-			});
-		});
-		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="stylesheets/style.css" rel="stylesheet">
+
+		<!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+        <script src="scripts/index.js"></script>
+        
 	</head>
-	<body class="home">
-		<nav class="navbar navbar-default navbar-fixed-top">
-		    <div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
-				  </button>
-				  <a id="home" class="navbar-brand" href="#">Calvin Chan</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-					  <li id="AboutMeButton"><a href="#">About Me</a></li>
-					  <li id="ProjectsButton"><a href="#">Projects</a></li>
-					  <li id="BlogButton"><a href="#">Blog</a></li> 				  
-					  <!-- <li id="ContactMeButton"><a href="#">Contact Me</a></li> -->
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-					  <li><a href="Calvin_Chan_Resume.pdf" target="_blank"><span class="glyphicon glyphicon-download-alt"></span> Resume</a></li>
-					</ul>
-				</div><!-- collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
-		
-		<div id="mainBody" class="row">
-			<img height="100%" width="100%" src="images/home.jpg"/>
-		</div>
-		
-		<div id="aboutMeBody" class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="row">
-					
-					<!-- left column for picture and other info -->
-					<div class="col-md-4">
-						<!-- headshot -->
-						<img class="headshot" src="/images/headshot.JPG"/>
-						
-						<h5 class="contactInfo"><span class="glyphicon glyphicon-map-marker contactIcon"></span>Vancouver, BC, Canada</h5>
-						<h5 class="contactInfo"><span class="glyphicon glyphicon-envelope contactIcon"></span>chansqauredstudio@gmail.com</h5>
-						<h5 class="contactInfo"><span class="glyphicon glyphicon-earphone contactIcon"></span>(604) 786-7738</h5>
-						
-						<!-- skills -->
-						<h2>Languages</h2>
-						<ul>
-							<li>Groovy</li>
-							<li>Java</li>
-							<li>Javascript</li>
-							<li>Python</li>
-							<li>C++/C</li>
-							<li>MySQL</li>
-							<li>PHP</li>
-							<li>HTML</li>
-							<li>CSS/SASS/Bootstrap</li>
-						</ul>
-						
-						<h2>Related Skills/Experience</h2>
-						<ul>
-							<li>Agile/Scrum</li>
-							<li>Git/Bitbucket</li>
-							<li>Windows</li>
-							<li>Linux</li>
-							<li>OSX</li>
-							<li>Atlassian</li>
-							<li>AWS</li>
-							<li>Grails</li>
-							<li>Ant</li>
-							<li>Maven</li>
-							<li>Grunt</li>
-							<li>Selenium/Geb</li>
-							<li>JUnit</li>
-						</ul>
-						
-						<h3>Favourite Quotes</h3>
-						<p><q><i>You must be shapeless, formless, like water. When you pour water in a cup, it becomes the cup. When you pour water in a bottle, it becomes the bottle. When you pour water in a teapot, it becomes the teapot. Water can drip and it can crash. Become like water my friend.</q></i> - Bruce Lee</p>
+	<body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a id="aboutMeBtn" href="">About Me</a></li>
+                        <li><a id="skillsBtn" href="">Skills</a></li>
+                        <li><a id="expBtn" href="">Experience</a></li>
+                        <li><a id="projectsBtn" href="">Projects</a></li>
+                        <li><a id="booksBtn" href="">Books</a></li>
+                        <li><a id="contactBtn" href="">Contact Me</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+		<div class="parallax-container">
+            <div class="parallax"><img src="images/bmw_with_quote.jpg"></div>
+        </div>
+            <div id="aboutMe" class="section white no-padding">
+                <div class="row">
+                    <div class="col s6 offset-s2">
+                        <h3>About Me</h3>
+                        <p>Software Engineer with a passion for learning a plethora of skills that are not solely used for software development. 
+                            Experienced with all stages from inception to delivery for the creation of websites. 
+                            Well-versed in Web Technology, Agile Methodologies and Automation with experience in Frontend, Backend, DevOps, Business Analysis and Project Management. 
+                            Strong focus in making tasks and processes simple and efficient to maximize value added.</p>
+                    </div>
+                    <!-- <div class="col s2">
+                        <img src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359" class="headshot">
+                    </div> -->
+                </div>
+            </div>
+		<div class="parallax-container">
+			<div class="parallax"><img src="images/bmw.jpg"></div>
+        </div>
+            <div id="skills" class="section white center-align no-padding">
+				<div class="row front-end-row no-margin">
+					<div class="col s6">
+						<h3 class="underline">Frontend</h3>
+                        <p>Groovy/Grails</p>
+                        <p>Javascript</p>
+                        <p>HTML</p>
+                        <p>CSS/SCSS</p>
+                        <p>JQuery</p>
+                        <p>React</p>
+                        <p>Unity</p>
+                        <p>Bootstrap</p>
+                        <p>Materialize</p>
+                    </div>
+                    <div class="col s6">
+                        <canvas id="frontEndChart" class='padding-1em'>
+                    </div>
+                </div>
+                <div class="row back-end-row no-margin">
+                    <div class="col s6">
+                        <canvas id="backEndChart" class="padding-1em">
+                    </div>
+                    <div class="col s6">
+                        <div class="">
+                            <h3 class="center-align underline">Backend</h3>
+                            <p>Groovy/Grails</p>
+                            <p>Java/Spring Boot</p>
+                            <p>Python</p>
+                            <p>SQL/PostgresSQL</p>
+                        </div>
 					</div>
-					
-					<!-- Description -->
-					<div class="col-md-8">
-						<h2>About Me</h2>
-						<p>Software Engineer with a passion for learning a plethora of skills that are not solely used for software development. Experienced with all stages of the development cycle for dynamic web applications. Well-versed in Java, Agile Methodologies and Quality Assurance. Background in software development with a strong focus in making tasks and processes simple and efficient.</p>
-					
-						<!-- Education -->
-						<div>
-							<div class="row">
-								<!-- space for icon -->
-								<div class="col-md-2">
-									<h4></h4>
-									<span class="glyphicon glyphicon-book aboutIcon"></span>
-								</div>
-
-								<!-- space for info -->
-								<div class="col-md-10">
-									<h2><u class="underline">Education</u></h2>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-10 col-md-offset-2">							
-									<h4>University of British Columbia</h4>
-									<h5>September, 2011 - April, 2016</h5>
-									<h5>Bachelor of Applied Science - Software Engineering</h5>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-10 col-md-offset-2">							
-									<h4>Agile42 - Scrum Alliance</h4>
-									<h5>September, 2017</h5>
-									<h5>Certified Scrum Master</h5>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Experience -->
-						<div class="row">
-							<!-- space for icon -->
-							<div class="col-md-2">
-								<span class="glyphicon glyphicon-briefcase aboutIcon"></span>
-							</div>
-							
-							<!-- space for info -->
-							<div class="col-md-10">
-								<h2><u class="underline">Technical Work Experience</u></h2>
-
-								<h4>TuGo</h4>
-								<h5>June, 2016 - Current</h5>
-								<h5>Software Developer</h5>
-								<p>As a front end developer, my primary role was to develop core functionality for our external and internal web applications. 
-								I also acted as a scrum master to help the IT department adopt scrum and help lead some small projects that were successfully adopted.</p>
-								
-								<hr>
-
-								<h4>Global Relay</h4>
-								<h5>August, 2014 - December, 2014</h5>
-								<h5>Front End Web Developer (Co-op)</h5>
-								<p>As a front end developer, my primary role was to fix bugs in the user interface. In addition, I completed a technical debt item that was related to the team's internationalization and automated build tools.</p>
-								
-								<hr>
-								
-								<h4>Global Relay</h4>
-								<h5>May, 2014 - August, 2014</h5>
-								<h5>Automation Developer (Co-op)</h5>
-								<p>As an automation developer, my primary role was to create test suites as well as create automated test scripts to fulfill the test suite. I sometimes demonstrated, to the product owner, new features that were completed during the sprint.</p>
-								
-								<hr>
-								
-								<h4>HP Autonomy</h4>
-								<h5>May, 2013 - December, 2013</h5>
-								<h5>Automation Developer (Co-op)</h5>
-								<p>As an automation developer, my primary role was to create create automated test scripts to fulfill test suite requirements.</p>
-								
-							</div>
-						</div>
-						
-						<!-- Other Experience -->
-						<div class="row">
-							<!-- space for icon -->
-							<div class="col-md-2">
-							</div>
-							
-							<!-- space for info -->
-							<div class="col-md-10">
-								<h2><u class="underline">Other Work Experience</u></h2>
-															
-								<h4>Pacific National Exhibition</h4>
-								<h5>August, 2011 - September, 2012</h5>
-								<h5>Games Manager</h5>
-								
-								<hr>
-								
-								<h4>Pacific National Exhibition</h4>
-								<h5>August, 2008 - December, 2009</h5>
-								<h5>Custodial Services</h5>
-								
-								<hr>
-								
-								<h4>Lynx Ridge Golf Club</h4>
-								<h5>August, 2006 - December, 2007</h5>
-								<h5>Dish Washer</h5>
-							</div>
-						</div>
-					</div>
+                </div>
+                <div class="row other-row no-margin">
+					<div class="col s6">
+						<h3 class="center-align underline">Other</h3>
+						<p>Atlassian</p>
+						<p>GIT/Bitucket</p>
+						<p>Ant/Maven/Grunt</p>
+						<p>Jenkins</p>
+						<p>AWS</p>
+						<p>JBoss</p>
+                        <p>Apache Tomcat</p>
+                        <p>Node.js/Express/Koa</p>
+						<p>Selenium/Geb</p>
+						<p>JUnit</p>
+                    </div>
+                    <div class="col s6">
+                        <canvas id="otherChart" class="padding-1em">
+                    </div>
 				</div>
 			</div>
-			<div class="col-md-2"></div>
-		</div>
-		
-		<div id="projectsBody" class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="row">
-				<h2 class="underline">Technical Projects</h2>
-				</div>
-				
-				<div class="row">
-					<h4>UBC Lost-n-Found</h4>
-					<h5>March, 2016 - April, 2016</h5>
-					<p>Created a website in a team of 4 engineers. A LAMP stack was used to create the website. The goal of the project was to create a lost-and-found web page specific to UBC.</p>
-				</div>
-				
-				<hr>
-				
-				<div class="row">
-					<div class="col-md-6 leftProjectBox">
-					<h4>Recycling Bin Game</h4>
-					<h5>September, 2015 - April, 2016</h5>
-					<p>Created a system that would count the number of items that were placed in a recycling station at the University of British Columbia. A web game was also created to help teach users where specific recyclable items belonged. The goal of the project was to encourage campus users to recycle properly.</p>
-					</div>
-					<div class="col-md-6">
-					<iframe width="100%" src="https://www.youtube.com/embed/TIyPAyBPbdI" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
-					
-				<hr>
-				
-				<div class="row">
-					<div class="col-md-6 leftProjectBox">
-						<iframe width="100%" src="https://www.youtube.com/embed/AKmjpt0Xp0M" frameborder="0" allowfullscreen></iframe>
-					</div>
-					
-					<div class="col-md-6">
-						<h4>Phone Lock Mechanism</h4>
-						<h5>October, 2015 - December, 2015</h5>
-						<p>Created a prototype android application to present a new security mechanism that would allow for an adversary watch an individual unlock their phone several times but still be unable to gain knowledge of the password.</p>
-					</div>
-					
-				</div>
+			<div id="exp" class="section white no-padding">
+                <div id="workCarousel" class="carousel carousel-slider center" >
+                    <div class="carousel-fixed-item center middle-indicator">
+                        <div class="left">
+                            <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
+                        </div>
+                        
+                        <div class="right">
+                        <a href="Siguiente" class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
+                        </div>
+                    </div>
+                    <div class="carousel-item red white-text" href="#one!">
+                        <h3>TuGo</h3>
+                        <h5>Software Developer</h5>
+                        <h5>June, 2016 - November, 2018</h2>
+                        <div class="row ">
+                            <div class="col s6 offset-s3 left-align">
+                                <ul class="pointed">
+                                    <li>Acted as Team lead for a project to replace the inventory management system, which was successfully adopted.</li>
+                                    <li>Acted as Scrum master to help the IT department adopt scrum and improved development processes.</li>
+                                    <li>Conducted code reviews using Bitbucket to learn and provide feedback about changes to the code base.</li>
+                                    <li>Created Jenkins jobs for automatic deployment, such as a legacy system that used Ant.</li>
+                                    <li>Collaborated with analysts, designers, and developers to create simple, efficient and intuitive user interfaces.</li>
+                                    <li>Created automated tests using Geb.</li>
+                                    <li>Developed an external and internal web application using Grails.</li>
+                                    <li>Aided in the development of a backend microservice using Spring.</li>
+                                    <li>Aided in the development of an internal name voting application using the Meteor Framework.</li>
+                                    <li>Developed an 3D virtual travel trivia game using Unity.</li>
+                                    <li>Setup a WordPress website to be used as an internal blog.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item amber white-text" href="#two!">
+                        <h2>Global Relay</h2>
+                        <h5>Front End Developer / Automation Developer</h5>
+                        <h5>May, 2014 - December, 2014</h2>
+                        <div class="row ">
+                            <div class="col s6 offset-s3 left-align ">
+                                <ul class="pointed ">
+                                    <li>Fixed numerous issues in the user interface by using the Sencha5 Javascript framework.</li>
+                                    <li>Fixed numerous layout issues using SCSS and HTML to improve the user interface of the application.</li>
+                                    <li>Improved the runtime speed of the team’s internationalization (i18n) tool from 45 to 2 seconds by using Java.</li>
+                                    <li>Created an automated test suite for the i18n tool to ensure proper functionality.</li>
+                                    <li>Added build tasks in Grunt and Maven to simplify the development process, such as automate execution of the i18n tool and test suite.</li>
+                                    <li>Conducted code reviews using Crucible to learn and provide feedback about changes to the code base.</li>
+                                    <li>Manually tested new software features and created test suites to be reused in the future.</li>
+                                    <li>Automated test cases in the Selenium framework (Java) to increase the coverage of automated regression tests.</li>
+                                    <li>Found bugs in the application and generated bug reports, which were communicated to the team using Jira.</li>
+                                    <li>Demonstrated to the product owner that a feature is in working order and could be released to the public.</li>
+                                    <li>Conducted code reviews using Crucible, mainly to communicate to others about additions to the test framework.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item green white-text" href="#three!">
+                        <h2>HP Autonomy</h2>
+                        <h5>Automation Developer</h5>
+                        <h5>May, 2014 - December, 2014</h2>
+                        <div class="row">
+                            <div class="col s6 offset-s3 left-align">
+                                <ul class="pointed">
+                                    <li>Created automated test suites to perform functionality, performance and integration tests.</li>
+                                    <li>Added to the existing test framework that was written in Ruby.</li>
+                                    <li>Documented test automation cases, test automation suites, and test scripts.</li>
+                                    <li>Found bugs in the application and generated a bug report, which were communicated to the team using Jira.</li>
+                                </ul>       
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item blue white-text" href="#four!">
+                        <h3>Other Work Experience</h2>
 
-				<hr>
-				
-				<div class="row">
-					<h4>Home Security System</h4>
-					<h5>January, 2014 - April, 2014</h5>
-					<p>Created a system that would automatically detect motion in front of a camera and proceed to take pictures of the adversary and store the pictures onto a computer (Altera DE2).</p>
-				</div>
-				
-				<hr>
-				
-				<div class="row">
-				
-					<h4>Tidal Wave Grapher</h4>
-					<h5>January, 2014 - April, 2014</h5>
-					<p>Created an Android application that would automatically scrape tidal wave data from online sources and present the data on a handheld device. The application also notified the user of the closest bouy system.</p>
-				
-				</div>
-				
-			</div>
-			<div class="col-md-2"></div>
-		</div>
-		
-		<div id="hobbiesBody" class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="row">
-					<h2 class="underline">Other Projects</h2>
-					<div class="row projectRow">
-						<div class="col-md-6">
-							<p class="otherProjectDescription"> Here is a small project that I finished in Grade 11. I was a huge fan of Starcraft and so I had cut the zerg symbol on the side of a computer case. And replicated the zerg's creep like feature.</p>
-						</div>
+                        <h2>Pacific National Exhibition</h2>
+                        <h5>Games Manager</h2>
+                        <h5>August, 2011 - September, 2012</h2>
+                        
+                        <h2>Pacific National Exhibition</h2>
+                        <h5>Custodial Services</h2>
+                        <h5>August, 2008 - December, 2009</h2>
 
-						<div class="col-md-6">
-							<img width="100%" height="100%" src="/images/casemod.jpg"/>
-						</div>
-					</div>
-				</div>
+                        <h2>Lynx Ridge Golf Club</h2>
+                        <h5>Dish Washer</h2>
+                        <h5>August, 2006 - December, 2007</h2>
+                    </div>
+                </div>
 			</div>
-			<div class="col-md-2"></div>
-		</div>
-		
-		<div id="blogsBody" class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="row">
-					<h2 class="underline">Blog</h2>
-					<p>This is the page where I talk about random things that happen in my life or that I feel opinionated about.</p>
-					<p>For now, here is a clip that I made after my backpacking trip around Europe during the summer of 2015. The clip features most of the people that I had met in various cities.</p>
-					<iframe width="420" height="315" src="https://www.youtube.com/embed/mqG3ScNNNSA" frameborder="0" allowfullscreen></iframe>
-				</div>
-			</div>
-			<div class="col-md-2"></div>
-		</div>
-	</body>	
+		<div class="parallax-container">
+			<div class="parallax"><img src="images/s2k.jpg"></div>
+        </div>
+            <div id="projects" class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="col s4">
+                            <div class="card medium">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Work Learn Site<i class="material-icons right">more_vert</i></span>
+                                    <p>Created a web site that enables users to manage a to-do list and insert what they learned about each task.</p>
+                                    <!-- <p><a href="#">Check it out here</a></p> -->
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                    <p>Created with Grails</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card medium">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">React Weather Channel<i class="material-icons right">more_vert</i></span>
+                                    <p>Website that shows the weather pattern for the next few days.</p>
+                                    <p><a href="https://github.com/Cyrois/react-weather-app" target="blank">Github Repo</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">React Weather Channel<i class="material-icons right">close</i></span>
+                                    <ul>
+                                        <li>Created using React</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card medium">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Roll-a-Ball Scare Game<i class="material-icons right">more_vert</i></span>
+                                    <p>Created a modified version of the roll-a-ball tutorial that would scare the user at the end of the game using Unity.</p>
+                                    <p><a href="https://github.com/Cyrois/Roll_a_ball_unity" target="blank">Github Repo</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                    <p>Created in Unity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            <div class="card medium">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Tweet Saver<i class="material-icons right">more_vert</i></span>
+                                    <p>Created a web page that would display JSON data as well as have persistent browser states.</p>
+                                    <!-- <p><a href="#">This is a link</a></p> -->
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Tweet Saver<i class="material-icons right">close</i></span>
+                                    <p>Created using Angular 2.0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card medium">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Recycling Bin Game<i class="material-icons right">more_vert</i></span>
+                                    <p>Gamified a recycling bin at UBC to test if gamification would affect consumer recycling habits.</p>
+                                    <br>
+                                    <p><a href="https://www.youtube.com/watch?v=TIyPAyBPbdI" target="blank">Youtube Link</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Recycling Bin Game<i class="material-icons right">close</i></span>
+                                    <ul>
+                                        <li>Acted as team leader to spread tasks among the team, act as primary contact to clients and lead team meetings.</li>
+                                        <li>Designed the software architecture with one other engineer and developed a modular and efficient system.</li>
+                                        <li>Implemented various software classes using the Python programming language.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card medium">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://i2.wp.com/www.northstarcharter.org/wp-content/uploads/2018/01/coming-soon.png?fit=791%2C359">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Phone Lock Mechanism<i class="material-icons right">more_vert</i></span>
+                                    <p>Created a prototype Android application that featured our incredibly secure phone unlocking design. Won multiple class awards.</p>
+                                    <br>
+                                    <p><a href="https://www.youtube.com/watch?v=AKmjpt0Xp0M" target="blank">Youtube Link</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Phone Lock Mechanism<i class="material-icons right">close</i></span>
+                                    <ul>
+                                        <li>Designed a proof of concept Android application, with 2 other students, that required a user to unlock the application.</li>
+                                        <li>Implemented an algorithm that will verify a swipe gesture to be a valid unlocking sequence and grant access if so.</li>
+                                        <li>Presented the project to classmates and industry sponsors to explain the significance of our changes in security.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="books" class="row">
+                <div id="other-projects-carousel" class="carousel">
+                    <div class="carousel-item" href="#one!">
+                        <div class="card large">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="https://images-na.ssl-images-amazon.com/images/I/5154eSTKUxL._SX382_BO1,204,203,200_.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">The Clean Coder</span>
+                                <p>Amazing book for new practitioners to learn about best work habits for a developer.</p>
+                                <p>Two of the key take aways for me was the practice of understanding your business and using tests to your advantage.</p>
+                            </div>
+                        </div>	
+                    </div>
+                    <div class="carousel-item" href="#two!">
+                        <div class="card large">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="https://images-na.ssl-images-amazon.com/images/I/515iEcDr1GL._SX258_BO1,204,203,200_.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">Clean Code</span>
+                                <p>The is a great book for new and experienced developers to remind themselves how to create maintainable code.</p>
+                                <p>Two of the key takes aways for me was the technique of created readable code and the importance of automation.</p>
+                            </div>
+                        </div>	
+                    </div>
+                    <div class="carousel-item" href="#three!">
+                        <div class="card large">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="https://i.ytimg.com/vi/qtn7KQTevkA/maxresdefault.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">The 10X Rule</span>
+                                <p>Awesome set of principles to follow in life in order the acheive the life you desire.</p>
+                                <p>My favourite idea from this book: "Operating like average will result in average".</p>
+                            </div>
+                        </div>	
+                    </div>
+                </div>
+            </div>
+        <div class="parallax-container">
+			<div class="parallax"><img src="images/cranes.jpg"></div>
+        </div>
+
+		<div id="contactMe" class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col m10 offset-m1 s12">
+                        <h2 class="center-align">Contact Form</h2>
+                        <div class="row">
+                            <form class="col s12" action="https://postmail.invotes.com/send" method="post" id="email_form">
+                                <input type="hidden" name="access_token" value="yqpmldy5jp7e6m33lnyklrow" />
+                                <!-- return urls can be fully qualified -OR-
+                                    start with / for root relative -OR-
+                                    start with . for url relative --> 
+                                <input type="hidden" name="success_url" value="http://cyrois.github.io/thankyou.html" />
+                                <input type="hidden" name="error_url" value="http://cyrois.github.io/sorry.html" />
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="subject" name="subject" class="materialize-textarea"></textarea>
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="message" name="text" class="materialize-textarea"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col m6">
+                                        <p class="left-align" style="font-size: 8pt;">Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
+                                    </div>
+                                    <div class="col m6">
+                                        <p class="right-align"><button id="submit_form" class="btn btn-large waves-effect waves-light" type="button" name="action">Send Message</button></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>	
 </html>
