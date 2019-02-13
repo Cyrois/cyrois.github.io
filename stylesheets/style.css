@@ -51,6 +51,11 @@ nav .nav-wrapper ul a{
     margin: 1em 0 1em 0;
 }
 
+.margin-vert-2em {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 .headshot {
 	margin-top: 2em;
     max-width: 300px;
@@ -119,4 +124,8 @@ ul.pointed>li {
 
 .card.medium {
     height: 600px;
+}
+
+#contactMe {
+    height: 800px;
 }

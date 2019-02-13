@@ -50,7 +50,8 @@ const defaultChartOptions = {
             max: 10,
             fontSize: 20,
             fontColor: 'white',
-            showLabelBackdrop: false
+            showLabelBackdrop: false,
+            display: false //hides the ticks
         },
         pointLabels: {
             fontSize: 20,
