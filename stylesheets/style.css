@@ -1,5 +1,11 @@
 p, li {
-    font-size: 16pt;
+    font-size: 20pt;
+}
+
+@media only screen and (min-width: 768px) {
+    p, li {
+        font-size: 16pt;
+    }
 }
 
 .section p, .section li, .section h1, .section h2, .section h3, .section h4 {
@@ -29,6 +35,37 @@ nav .nav-wrapper ul a{
 
 .back-end-row {
     background-color: rgb(76, 175, 80);
+}
+
+
+/* @media only screen and (max-width: 900px) {
+    .back-end-row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .first {
+        order: 2;
+    }
+
+    .second {
+        order: 1;
+    }
+} */
+
+@media only screen and (min-width: 901px) {
+    .back-end-row {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .first {
+        order: 1;
+    }
+
+    .second {
+        order: 2;
+    }
 }
 
 .other-row {
