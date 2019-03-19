@@ -54,7 +54,7 @@ const defaultChartOptions = {
             display: false //hides the ticks
         },
         pointLabels: {
-            fontSize: 20,
+            fontSize: screen.width < 768 ? 32 : 20,
             fontColor: 'white',
         }
     },
@@ -65,12 +65,12 @@ const defaultChartOptions = {
 
 function initFrontEndSkillChart() {
     const data = {
-        labels: ['Grails', 'JQuery', 'Javascript', 'React', 'CSS', 'HTML'],
+        labels: ['Grails', 'JQuery', 'Javascript', 'React/Angular', 'CSS', 'HTML'],
         datasets: [{
             backgroundColor: 'rgba(242, 38, 19, 0.2)',
             borderColor: 'rgba(214, 69, 65, 1)',
             pointBackgroundColor: 'rgba(214, 69, 65, 1)',
-            data: [8, 8, 6, 2, 8, 9]
+            data: [8, 8, 6, 3, 8, 9]
         }]
     }
 
