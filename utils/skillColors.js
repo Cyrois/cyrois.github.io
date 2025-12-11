@@ -42,9 +42,7 @@ const techToColorMap = {
   'MySQL': '#F59E0B',
   'DynamoDB': '#F59E0B',
   'Oracle': '#F59E0B',
-
-  // Architecture - Red
-  'GraphQL': '#EF4444',
+  'GraphQL': '#F59E0B',
 
   // Enterprise & Testing - Indigo
   'Git': '#6366F1',

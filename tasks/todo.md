@@ -1,58 +1,31 @@
-# Task: Make Company Image Smaller with Text Flow
+# Remove teamSize Property
+
+## Problem
+The `teamSize` property exists in the work experience data but is set to `null` for all entries and is conditionally displayed in the UI. This unused property should be removed to simplify the codebase.
+
+## Analysis
+- **assets/data/workExperience.js**: All 4 work experience entries have `teamSize: null` (lines 26, 61, 96, 130)
+- **pages/work/[slug].vue**: Line 36 displays teamSize conditionally with `v-if="company.teamSize"`
 
 ## Plan
-- [x] Modify the Overview section in `/pages/work/[slug].vue` to include a smaller thumbnail image
-- [x] Add CSS to make the image float left with text wrapping around it
-- [x] Ensure responsive design works on mobile devices
+- [x] Remove `teamSize: null` from all work experience entries in `assets/data/workExperience.js`
+- [x] Remove the teamSize display line from `pages/work/[slug].vue`
 
-## Implementation Details
-The change will be made in the Overview section (lines 30-38) of the work detail page. Instead of having the image in a separate carousel section, we'll add a small thumbnail that floats within the overview text.
-
-Changes needed:
-1. Add a floated image element at the start of the Overview section
-2. Style it as a small thumbnail (approximately 150-200px wide)
-3. Allow text to flow around it using CSS float/flexbox
-4. Ensure it's responsive (stack on mobile if needed)
-
----
-
-## Review Section
+## Review
 
 ### Summary of Changes
-Modified the work experience detail page to improve layout with responsive image placement: on mobile the image appears in the header beside company info, on desktop it appears in the Overview section with text flowing around it. Also removed the Responsibilities section, removed the Project Gallery, and moved Technologies section directly below Overview.
+Successfully removed the unused `teamSize` property from the codebase.
 
 ### Files Modified
-1. **pages/work/[slug].vue** - Modified section layout and order
+1. **assets/data/workExperience.js** - Removed 4 instances of `teamSize: null`
+2. **pages/work/[slug].vue** - Removed the conditional teamSize display line
 
 ### Changes Made
-1. **Responsive Image Placement:**
-   - **Mobile/Tablet (< md breakpoint)**: Image appears in header beside company info
-     - Positioned using flexbox layout
-     - Size: 96px on mobile, 128px on tablet - square aspect ratio
-     - Uses `md:hidden` class to hide on desktop
-   - **Desktop (md+ breakpoint)**: Image appears in Overview section with text flowing around it
-     - Positioned using `float-left` with text wrapping
-     - Size: 192px (w-48)
-     - Uses `hidden md:block` classes to show only on desktop
-   - Both instances: rounded corners, shadow, proper object fitting
-   - Moved title (h1) outside flexbox to be its own row
-
-2. **Section Reordering and Removal:**
-   - Moved Technologies section to appear directly after Overview (was at the end)
-   - Removed Responsibilities section entirely
-   - Removed Image Carousel / Project Gallery section (still exists on project details page)
-
-3. **New Section Order:**
-   - Header (title on its own row, then image + company info on mobile)
-   - Overview (with floating image on desktop)
-   - Technologies Used
-   - Key Achievements
+- Removed `teamSize: null,` from all 4 work experience entries (Shambhala, Vass, Moola, TuGo)
+- Removed `<p v-if="company.teamSize" class="text-text-gray">Team Size: {{ company.teamSize }}</p>` from the work detail page template
 
 ### Impact
-- Optimized layout for both mobile and desktop viewing experiences
-- Mobile: Image serves as visual identifier in header without taking up overview space
-- Desktop: Image provides context in overview with text wrapping naturally around it
-- More logical content flow with technologies appearing earlier
-- Fully responsive across all device sizes
-- Minimal code changes - conditional display classes and layout adjustments
-- Project Gallery still available on project details page at `/pages/projects/[slug].vue`
+- Cleaner data structure with no unused properties
+- Simplified UI template by removing unnecessary conditional rendering
+- Total of 5 lines removed across 2 files
+- No visual changes to the site since teamSize was never displayed (always null)

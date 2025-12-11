@@ -33,7 +33,6 @@
               <span class="hidden sm:inline text-medium-gray">•</span>
               <span class="text-text-gray">{{ company.location }}</span>
             </div>
-            <p v-if="company.teamSize" class="text-text-gray">Team Size: {{ company.teamSize }}</p>
           </div>
         </div>
       </div>
