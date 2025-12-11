@@ -46,7 +46,7 @@
             :src="company.images[0]"
             :alt="company.name"
             loading="lazy"
-            class="hidden md:block float-left mr-6 mb-4 w-48 rounded-lg shadow-md"
+            class="hidden md:block float-left mr-6 mb-4 w-48 h-48 rounded-lg shadow-md object-cover"
           />
           <p v-for="(paragraph, index) in company.detailedDescription" :key="index" class="mb-4">
             {{ paragraph }}
