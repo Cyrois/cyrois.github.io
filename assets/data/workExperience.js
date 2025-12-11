@@ -62,27 +62,23 @@ export default [
     highlight: 'Launched web app generating $10K revenue in first month and Bitcoin wallet on Google Play Store',
     description: 'Built secure financial software tools from scratch. Developed a revenue-generating web application and launched a Bitcoin wallet on the Google Play Store within 6 months.',
     detailedDescription: [
-      'At Moola Inc., a software company focused on building tools with state-of-the-art security features, I worked across the full stack to deliver secure financial applications. This role exposed me to the critical importance of security in fintech applications.',
-      'I developed a web application built with Angular, Gulp, Spring Boot, Hibernate, and MySQL that generated $10,000 in revenue in the first month after launch. This demonstrated the business value of well-executed technical work.',
-      'I also created a CI/CD pipeline using Jenkins to facilitate automated testing and deployment with the click of a button, significantly improving our development velocity. Additionally, I customized open-source libraries written in C and Kotlin to launch a Bitcoin Wallet on the Google Play Store within 6 months.'
+      'At Moola Inc., a software company (previously known as SkyGlobal Technologies) focused on building tools with state-of-the-art security features. I worked across the full stack to deliver secure financial applications, one application was a gift card storage and marketplace app called Moola and the other was a Bitcoin Wallet called Stash.',
+      'I worked in a team of 4 developers (2 full-stack and 2 mobile) to develop a gift card marketplace and storage application in 1 year that had the ability to work completely offline. Moola was built with Angular, Gulp, Spring Boot, Hibernate, and MySQL. I also created a CI/CD pipeline using Jenkins to facilitate automated testing and deployment with the click of a button, significantly improving our development velocity. Moola generated $10,000 in revenue in the first month after launch, demonstrating the business value of well-executed technical work.',
+      'Additionally, when the company hadn\'t been able to hire a C developer, I jumped into our Crypto team to help build a Bitcoin Wallet. I learned how the Bitcoin blockchain worked and customized two open-source libraries, Electrum Wallet and Unstoppable Wallet. With another Kotlin developer, we launched our own Bitcoin Wallet on the Google Play Store within 7 months.',
+      'A key takeaway from my time at Moola was that I had the ability to learn any technology. Every technology I used at Moola was new to me, but I was able to pick them up and learn the ropes in no time. To me, web development is just made up of 3 layers packaged in various ways; data storage, business logic and the user interface. I even learned arguably one of the most complex technologies of the decade and developed a custom solution for it.'
     ],
     achievements: [
-      'Developed web application that generated $10K revenue in first month',
-      'Built CI/CD pipeline with Jenkins for automated testing and deployment',
-      'Launched Bitcoin Wallet on Google Play Store within 6 months',
-      'Customized open-source C and Kotlin libraries for production use',
-      'Implemented state-of-the-art security features for financial applications',
-      'Worked across full stack: Angular, Spring Boot, Hibernate, MySQL'
+      'Developed an application that generated $10K revenue in the first month',
+      'Rewrote the Angular build process to improve build time by 50%',
+      'Launched Bitcoin Wallet on Google Play Store within 7 months',
+      'Designed and developed a microservice oriented backend system using Spring Boot 2',
+      'Created automated tests using JUnit and Postman',
+      'Built a CI/CD pipeline with Jenkins for automated testing and deployment',
+      'Integrated with third party applications such as SendGrid, Stripe and Google Analytics',
+      'Conducted interviews with job candidates and helped onboard new developers',
+      'Led the adoption of Scrum to improve the development process'
     ],
-    responsibilities: [
-      'Full-stack development of secure financial applications',
-      'Building web applications with Angular, Spring Boot, and MySQL',
-      'Creating CI/CD pipelines for automated testing and deployment',
-      'Customizing and integrating open-source libraries (C, Kotlin)',
-      'Implementing security features for fintech products',
-      'Deploying mobile applications to Google Play Store'
-    ],
-    technologies: ['Angular', 'Spring Boot', 'Hibernate', 'MySQL', 'Gulp', 'Jenkins', 'C', 'Kotlin'],
+    technologies: ['Angular', 'Spring Boot', 'Hibernate', 'PostgreSql', 'Gulp', 'Jenkins', 'C', 'Kotlin'],
     images: ['/images/moola.webp'],
     link: '/work/moola-inc'
   },

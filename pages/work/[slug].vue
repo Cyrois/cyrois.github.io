@@ -75,7 +75,7 @@
 
       <!-- Key Achievements -->
       <section v-if="company.achievements && company.achievements.length > 0" class="mb-12">
-        <h2 class="text-3xl font-bold mb-6 text-navy">Key Achievements</h2>
+        <h2 class="text-3xl font-bold mb-6 text-navy">Key Tasks/Achievements</h2>
         <ul class="space-y-3">
           <li
             v-for="(achievement, index) in company.achievements"
