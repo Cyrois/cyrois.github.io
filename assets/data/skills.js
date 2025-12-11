@@ -1,19 +1,19 @@
 export default [
   {
     title: 'Frontend Development',
-    description: 'Nuxt, Vue.js, React Native, Angular, Modern JavaScript',
+    description: 'Nuxt, Vue, Angular, CSS, SCSS, Selenium, Geb, Playwright, Tailwind, Bootstrap',
     color: '#06B6D4',
     icon: 'Monitor'
   },
   {
     title: 'Backend Development',
-    description: 'Laravel, Spring Boot, Node.js, Hibernate, Java',
+    description: 'Laravel, Eloquent, Spring Boot, Hibernate',
     color: '#10B981',
     icon: 'Server'
   },
   {
     title: 'Cloud & DevOps',
-    description: 'AWS, DynamoDB, Jenkins, CI/CD, Automation',
+    description: 'CI/CD, Github Workflows, Cloudfront, Cloudformation, Terraform',
     color: '#8B5CF6',
     icon: 'Cloud'
   },

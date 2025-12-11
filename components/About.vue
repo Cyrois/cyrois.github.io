@@ -19,8 +19,8 @@
       </div>
 
       <div class="space-y-8 text-lg text-text-gray leading-relaxed">
-        <p v-for="(paragraph, index) in aboutData.paragraphs" :key="index">
-          {{ paragraph }}
+        <p v-for="(paragraph, index) in aboutData.paragraphs" :key="index" v-html="paragraph">
+          
         </p>
       </div>
     </div>

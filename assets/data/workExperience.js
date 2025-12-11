@@ -7,17 +7,17 @@ export default [
     location: 'Remote',
     logo: '/images/logos/shambhala.png',
     highlight: 'Built 2 applications from scratch handling 30,000+ concurrent users with 99.75% success rate',
-    description: 'Building an all-in-one event management system that allows organizers to sell tickets, manage orders, manage crew, and more. Led development of scalable web applications handling 30,000+ concurrent users.',
+    description: 'Building an all-in-one event management system that allows organizers to sell tickets, manage orders, manage crew, and more. Designed and developed scalable white-labeled web applications handling 30,000+ concurrent users.',
     detailedDescription: [
-      'At Shambhala Music Festival, I work on an all-in-one software system that empowers event organizers to sell tickets, manage orders, coordinate crew, and handle all aspects of event operations. This role allows me to combine technical expertise with product thinking to deliver maximum value.',
+      'At Shambhala Music Festival, I work on an all-in-one software system that empowers event organizers to sell tickets, manage orders, coordinate crew, and handle all aspects of event operations. This role allows me to combine my technical expertise with project management to work directly with end users to ensure festival-goers and event managers have the best experience.',
       'I gather requirements directly from stakeholders and define project roadmaps and user stories to maximize value within fixed timelines. This collaborative approach ensures we\'re building the right features that truly serve the business needs.',
-      'From a technical standpoint, I\'ve built 2 fully-responsive web applications from scratch using Nuxt and Vue that can handle 30,000+ concurrent users with an error rate of less than 0.25% per session. Each application can be white-labeled within 15 minutes, enabling rapid deployment for different events.'
+      'From a technical standpoint, I managed 7 different web applications, built 2 from scratch and sunset 3 of them. I\'ve built 2 fully-responsive web applications from scratch using Nuxt and Vue that can handle 30,000+ concurrent users with an error rate of less than 0.25% per session. Each application can be white-labeled within 15 minutes, enabling rapid deployment for different events.'
     ],
     achievements: [
-      'Built 2 fully-responsive web applications from scratch using Nuxt/Vue',
-      'Achieved 99.75% session success rate with 30,000+ concurrent users',
+      'Built 2 fully-responsive web applications from scratch using Nuxt/Vue/Tailwind',
+      'Achieved 99.75% error-free session rate with 30,000+ concurrent users',
       'Implemented white-labeling system enabling 15-minute deployment per event',
-      'Maintained 5 additional web applications using Laravel, Vue, MySQL, AWS, DynamoDB, GraphQL',
+      'Maintained 5 web applications using: Laravel, Nuxt, Vue, MySQL, AWS, DynamoDB, GraphQL',
       'Successfully sunset 2 legacy applications, reducing technical debt',
       'Leveraged AI tools to increase code output and quality by 30%'
     ],

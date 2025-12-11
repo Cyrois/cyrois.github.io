@@ -1,6 +1,6 @@
 export default {
-  title: "Full Stack Engineering Leader",
-  subtitle: "Building web applications serving 30,000+ concurrent users with 99.75% reliability | Leading teams | Delivering enterprise and startup solutions",
+  title: "Full Stack Engineer",
+  subtitle: "A decade of building software taught me that great code isn't enough, the people and the process are just as important in creating value",
   ctaText: "Get In Touch",
   ctaLink: "#contact",
   backgroundImage: "/images/hero_image-1.webp"
