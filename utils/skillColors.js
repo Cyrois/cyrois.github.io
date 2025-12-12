@@ -20,6 +20,7 @@ const techToColorMap = {
   'PHP': '#10B981',
   'Spring Boot': '#10B981',
   'Laravel': '#10B981',
+  'Eloquent': '#10B981',
   'Hibernate': '#10B981',
   'Grails': '#10B981',
   'Meteor': '#10B981',
@@ -33,13 +34,17 @@ const techToColorMap = {
   'Docker': '#8B5CF6',
   'Jenkins': '#8B5CF6',
   'Terraform': '#8B5CF6',
+  'Cloudformation': '#8B5CF6',
+  'Ant': '#8B5CF6',
   'Istio': '#8B5CF6',
 
   // Database & Data - Orange
   'PostgreSQL': '#F59E0B',
+  'PostgreSql': '#F59E0B',
   'MongoDB': '#F59E0B',
   'Redis': '#F59E0B',
   'MySQL': '#F59E0B',
+  'MySql': '#F59E0B',
   'DynamoDB': '#F59E0B',
   'Oracle': '#F59E0B',
   'GraphQL': '#F59E0B',
@@ -49,7 +54,17 @@ const techToColorMap = {
   'WordPress': '#6366F1',
   'SAP Commerce': '#6366F1',
   'SAP ERP': '#6366F1',
-  'Geb': '#6366F1'
+  'Geb': '#6366F1',
+  'JMeter': '#6366F1',
+
+  // Product & Planning - Red
+  'Scrum': '#EF4444',
+  'Jira': '#EF4444',
+  'Roadmapping': '#EF4444',
+
+  // Leadership & Management - Indigo
+  'Team Management': '#6366F1',
+  'Requirement Gathering': '#6366F1'
 }
 
 export function getTechColor(techName) {
