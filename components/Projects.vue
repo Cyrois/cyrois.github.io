@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 bg-light-gray">
+  <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 text-center text-navy-500">
         Featured Projects
@@ -8,7 +8,7 @@
         <div
           v-for="project in projects"
           :key="project.title"
-          class="bg-white border border-medium-gray p-8 shadow-md transition-all duration-200 hover:shadow-xl rounded-lg"
+          class="bg-white border border-medium-gray p-8 shadow-md transition-all duration-200 hover:shadow-xl rounded-[2px]"
         >
           <h3 class="text-2xl font-bold mb-4 text-navy-500">{{ project.title }}</h3>
           <p class="text-text-gray mb-6 leading-relaxed">{{ project.description }}</p>
@@ -33,7 +33,7 @@
               :href="project.github"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-md"
+              class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-[2px]"
             >
               View on GitHub
               <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@
               :href="project.demo"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-md"
+              class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-[2px]"
             >
               View Demo
               <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@
             <NuxtLink
               v-if="!project.github && !project.demo && project.link"
               :to="project.link"
-              class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-md"
+              class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-[2px]"
             >
               Learn More
               <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

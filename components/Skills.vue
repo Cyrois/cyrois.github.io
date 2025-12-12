@@ -1,5 +1,5 @@
 <template>
-  <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 bg-light-gray">
+  <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 text-center text-navy-500">
         Skills & Expertise
@@ -8,7 +8,7 @@
         <div
           v-for="skill in skills"
           :key="skill.title"
-          class="p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md transition-all duration-200 hover:shadow-xl rounded-lg"
+          class="p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md transition-all duration-200 hover:shadow-xl rounded-[2px]"
           :style="{ borderLeftColor: skill.color }"
         >
           <div class="flex items-start gap-4 mb-4">

@@ -16,7 +16,7 @@
       </p>
       <a
         :href="heroData.ctaLink"
-        class="inline-block bg-navy text-white font-semibold px-10 py-4 text-sm uppercase tracking-wider transition-colors duration-200 hover:bg-navy-500 rounded-lg"
+        class="inline-block bg-navy text-white font-semibold px-10 py-4 text-sm uppercase tracking-wider transition-colors duration-200 hover:bg-navy-500 rounded-[2px]"
       >
         {{ heroData.ctaText }}
       </a>

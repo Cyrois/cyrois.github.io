@@ -59,7 +59,7 @@
               : 'text-white hover:text-gray-200 focus:ring-white'
           ]">Projects</a>
           <a href="/#contact" :class="[
-            'border-2 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy',
+            'border-2 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 rounded-[2px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy',
             isScrolled
               ? 'border-navy text-navy hover:bg-navy hover:text-white'
               : 'border-white text-white hover:bg-white hover:text-navy'
@@ -72,7 +72,7 @@
           :aria-expanded="mobileMenuOpen"
           aria-label="Toggle navigation menu"
           :class="[
-            'md:hidden p-2 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-navy',
+            'md:hidden p-2 rounded-[2px] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-navy',
             isScrolled
               ? 'text-navy hover:bg-light-gray'
               : 'text-white hover:bg-white/10'
@@ -94,7 +94,7 @@
         <a href="/#skills" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Skills</a>
         <a href="/#work-experience" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Experience</a>
         <a href="/#projects" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Projects</a>
-        <a href="/#contact" @click="mobileMenuOpen = false" class="block px-3 py-3 text-white bg-navy hover:bg-navy-500 rounded-md transition-colors duration-200 font-semibold text-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">Contact</a>
+        <a href="/#contact" @click="mobileMenuOpen = false" class="block px-3 py-3 text-white bg-navy hover:bg-navy-500 rounded-[2px] transition-colors duration-200 font-semibold text-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">Contact</a>
       </div>
     </div>
   </nav>

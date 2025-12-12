@@ -1,51 +1,72 @@
-# Task: Make Card Panels Stand Out More
-
-## Analysis
-Currently, card panels use:
-- White backgrounds (`bg-white`)
-- Very subtle borders (`border-medium-gray` = `#E5E9F0`)
-- Shadows only on hover
-- Sitting on white or light-gray backgrounds
-
-The cards blend in too much with the background, making them hard to distinguish.
+# Task: Change Button and Card Rounding to rounded-[2px]
 
 ## Plan
 
-### Todo Items
-- [x] Add subtle default shadow to all card components
-- [x] Strengthen hover shadow for better interaction feedback
-- [x] Test visual improvements across all card components
+### Background
+Currently, buttons and cards use `rounded-lg` class. The user wants to change all of them to use `rounded-[2px]` (Tailwind arbitrary value) for more explicit control. Badges with `rounded-full` should remain unchanged.
 
-### Files to Modify
-1. `components/Projects.vue` - Project cards (line 11)
-2. `components/WorkExperience.vue` - Work experience cards (line 13)
-3. `components/Skills.vue` - Skills cards (line 11)
-4. `components/About.vue` - Stats cards (line 13)
+### Goal
+Replace all `rounded-lg` instances on buttons and cards with `rounded-[2px]`.
 
-### Approach
-- Add `shadow-md` class for default subtle shadow (gives depth)
-- Change hover shadow from `hover:shadow-lg` to `hover:shadow-xl` for better contrast
-- Keep current border styling - the shadow will provide the needed definition
+### Affected Files
+1. `components/Navigation.vue` - Desktop Contact button, mobile Contact button, mobile menu button
+2. `components/Contact.vue` - Contact link buttons
+3. `components/Hero.vue` - CTA button
+4. `components/Projects.vue` - Project cards and action buttons
+5. `components/Skills.vue` - Skill cards
+6. `components/WorkExperience.vue` - Experience cards and "Learn More" button
+7. `pages/work/[slug].vue` - Back to Portfolio buttons
+8. `pages/projects/[slug].vue` - All action buttons
 
-This is a simple, minimal change that only impacts card styling - no structural changes needed.
+### Implementation Steps
 
----
+- [x] Update Navigation.vue buttons from rounded-lg to rounded-[2px]
+- [x] Update Contact.vue buttons from rounded-lg to rounded-[2px]
+- [x] Update Hero.vue button from rounded-lg to rounded-[2px]
+- [x] Update Projects.vue cards and buttons from rounded-lg to rounded-[2px]
+- [x] Update Skills.vue cards from rounded-lg to rounded-[2px]
+- [x] Update WorkExperience.vue cards and button from rounded-lg to rounded-[2px]
+- [x] Update pages/work/[slug].vue buttons from rounded-lg to rounded-[2px]
+- [x] Update pages/projects/[slug].vue buttons from rounded-lg to rounded-[2px]
 
 ## Review
 
 ### Summary
-Successfully improved card visibility by adding default shadows to all card components across the site.
+Successfully replaced all `rounded-lg` and `rounded-md` classes with `rounded-[2px]` for all buttons and cards across the site. Badges with `rounded-full` remain unchanged.
 
 ### Changes Made
-1. **Projects.vue** - Added `shadow-md` to project cards, upgraded hover to `shadow-xl`
-2. **WorkExperience.vue** - Added `shadow-md` to work experience cards, upgraded hover to `shadow-xl`
-3. **Skills.vue** - Added `shadow-md` to skills cards, upgraded hover to `shadow-xl`
-4. **About.vue** - Added `shadow-md` to stats cards
+
+1. **components/Navigation.vue**
+   - Line 62: Desktop Contact button from `rounded-lg` to `rounded-[2px]`
+   - Line 75: Mobile menu button from `rounded-lg` to `rounded-[2px]`
+   - Line 97: Mobile Contact button from `rounded-lg` to `rounded-[2px]`
+
+2. **components/Contact.vue**
+   - Line 17: Contact link buttons from `rounded-lg` to `rounded-[2px]`
+
+3. **components/Hero.vue**
+   - Line 19: CTA button from `rounded-lg` to `rounded-[2px]`
+
+4. **components/Projects.vue**
+   - Line 11: Project cards from `rounded-lg` to `rounded-[2px]`
+   - Lines 36, 48, 58: All project action buttons from `rounded-lg` to `rounded-[2px]`
+
+5. **components/Skills.vue**
+   - Line 11: Skill cards from `rounded-lg` to `rounded-[2px]`
+
+6. **components/WorkExperience.vue**
+   - Line 13: Experience cards from `rounded-lg` to `rounded-[2px]`
+   - Line 57: "Learn More" button from `rounded-lg` to `rounded-[2px]`
+
+7. **pages/work/[slug].vue**
+   - Lines 97, 113: Back to Portfolio buttons from `rounded-lg` and `rounded-md` to `rounded-[2px]`
+
+8. **pages/projects/[slug].vue**
+   - Lines 101, 113, 127, 143: All action buttons from `rounded-lg` and `rounded-md` to `rounded-[2px]`
 
 ### Impact
-- Cards now have visible depth and stand out against white/light-gray backgrounds
-- Default shadow (`shadow-md`) provides subtle elevation
-- Hover effect (`shadow-xl`) creates better interaction feedback
-- Minimal code changes - only modified shadow classes
-- No structural or functional changes
-- All cards maintain their existing styling and behavior
+- All buttons and cards now have explicit 2px border radius using Tailwind arbitrary value syntax
+- Consistent styling across the entire site
+- Badges with `rounded-full` remain unchanged as intended
+- Total: 8 files modified, ~20 instances updated
+- Clean, minimal changes focused only on rounding values

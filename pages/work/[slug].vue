@@ -94,7 +94,7 @@
       <div class="mt-16 pt-8 border-t border-medium-gray">
         <NuxtLink
           :to="`/#work-${slug}`"
-          class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 uppercase tracking-wider text-sm"
+          class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 rounded-[2px] transition-all duration-200 uppercase tracking-wider text-sm"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -110,7 +110,7 @@
       <p class="text-xl text-text-gray mb-8">Sorry, we couldn't find the work experience you're looking for.</p>
       <NuxtLink
         to="/#work-experience"
-        class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 rounded-md transition-all duration-200"
+        class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 rounded-[2px] transition-all duration-200"
       >
         Return to Portfolio
       </NuxtLink>

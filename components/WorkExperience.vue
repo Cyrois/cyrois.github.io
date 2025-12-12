@@ -10,7 +10,7 @@
           v-for="(company, index) in companies"
           :key="index"
           :id="`work-${company.slug}`"
-          class="bg-white border border-medium-gray shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden rounded-lg"
+          class="bg-white border border-medium-gray shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden rounded-[2px]"
         >
           <div class="flex flex-col md:flex-row" :class="{ 'md:flex-row-reverse': index % 2 === 1 }">
             <!-- Image Section -->
@@ -54,7 +54,7 @@
               <div>
                 <a
                   :href="company.link"
-                  class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-md"
+                  class="inline-flex items-center bg-transparent border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 transition-all duration-200 uppercase tracking-wider text-sm rounded-[2px]"
                 >
                   Learn More
                   <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
