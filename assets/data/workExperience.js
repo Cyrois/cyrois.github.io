@@ -92,26 +92,18 @@ export default [
     highlight: 'Awarded 2017 Employee of the Year - Developed 3 web applications for insurance operations',
     description: 'Developed custom web applications for travel insurance company. Built 3 web applications and was awarded 2017 Employee of the Year for exceptional contributions.',
     detailedDescription: [
-      'At TuGo, a travel insurance company, I built custom web applications to configure and sell insurance policies. This was an important phase in my career where I honed my full-stack development skills and learned about the insurance domain.',
-      'I developed 3 web applications using various technologies including Grails, Spring Boot, Meteor, and Geb. Each application served different business needs, from policy configuration to customer-facing sales portals.',
-      'My contributions were recognized when I was awarded the 2017 Employee of the Year award, highlighting both my technical skills and my ability to deliver value to the business.'
+      'At TuGo, a travel insurance company, I built custom web applications to configure and sell insurance policies. This was an important phase in my career where I honed my full-stack development skills that kickstarted my career. I developed 3 web applications using various technologies. Each application served different business needs, from policy configuration to customer-facing sales portals.',
+      'One personal experience at TuGo stands out to me; about a time I found that an API was intermittently dropping data whilst the senior developer was firm that it was working as expected. For days, I tried different payloads, asked others for ideas, debugged with the author, nothing. Until one day, I sifted through the server logs and found that Apache was the culprit. Apache was limiting the payload size by magically dropping packets and proceeding without failure, a \'bug\' that no one had even considered, was solved with just a simple configuration value. It was a revolutionary moment for me, at that moment I knew I would become a Senior Engineer if I could think of where to look where none of my peers would.',
+      'My contributions were recognized when I was awarded the 2017 Employee of the Year award, highlighting both my technical skills and my ability to deliver value to the business. It was at TuGo where I really learned what it meant to have an amazing team, where the office is a fun place to be but you all get shit done in a state of flow.',
     ],
     achievements: [
-      'Developed 3 web applications using Grails, Spring Boot, Meteor, and Geb',
       'Awarded 2017 Employee of the Year',
-      'Built policy configuration and sales systems for insurance products',
-      'Delivered customer-facing applications with high reliability',
-      'Worked with diverse tech stack demonstrating adaptability'
+      'Developed 3 web applications using Grails, Spring Boot, Meteor, and Geb',
+      'Successfully lead the replacement of the inventory management system with ShipStation',
+      'Created Jenkins jobs for automatic deployment, such as a legacy system that used Ant',
+      'Acted as Scrum master for 3 scrum teams and hosted a Lunch & Learn for the IT department to learn Scrum',
     ],
-    responsibilities: [
-      'Developing web applications for insurance policy configuration',
-      'Building customer-facing sales portals',
-      'Working with Grails, Spring Boot, Meteor, and Geb frameworks',
-      'Collaborating with business stakeholders to understand requirements',
-      'Ensuring application reliability and performance',
-      'Maintaining and enhancing existing applications'
-    ],
-    technologies: ['Grails', 'Spring Boot', 'Meteor', 'Geb', 'Java', 'JavaScript'],
+    technologies: ['Grails', 'Spring Boot', 'MySql', 'Meteor', 'Geb', 'JMeter', 'Ant'],
     images: ['/images/tugo.webp'],
     link: '/work/tugo'
   }
