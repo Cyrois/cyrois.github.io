@@ -10,7 +10,7 @@
           v-for="(company, index) in companies"
           :key="index"
           :id="`work-${company.slug}`"
-          class="bg-white border border-medium-gray hover:shadow-lg transition-all duration-300 overflow-hidden rounded-lg"
+          class="bg-white border border-medium-gray shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden rounded-lg"
         >
           <div class="flex flex-col md:flex-row" :class="{ 'md:flex-row-reverse': index % 2 === 1 }">
             <!-- Image Section -->

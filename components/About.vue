@@ -10,7 +10,7 @@
         <div
           v-for="(stat, index) in aboutData.stats"
           :key="index"
-          class="text-center p-6 bg-light-gray rounded-lg border border-medium-gray"
+          class="text-center p-6 bg-light-gray rounded-lg border border-medium-gray shadow-md"
         >
           <div class="text-4xl font-bold text-navy mb-2">{{ stat.value }}</div>
           <div class="text-lg font-semibold text-text-dark mb-1">{{ stat.label }}</div>

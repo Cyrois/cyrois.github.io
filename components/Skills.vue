@@ -8,7 +8,7 @@
         <div
           v-for="skill in skills"
           :key="skill.title"
-          class="p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray transition-all duration-200 hover:shadow-lg rounded-lg"
+          class="p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md transition-all duration-200 hover:shadow-xl rounded-lg"
           :style="{ borderLeftColor: skill.color }"
         >
           <div class="flex items-start gap-4 mb-4">

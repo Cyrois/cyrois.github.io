@@ -8,7 +8,7 @@
         <div
           v-for="project in projects"
           :key="project.title"
-          class="bg-white border border-medium-gray p-8 transition-all duration-200 hover:shadow-lg rounded-lg"
+          class="bg-white border border-medium-gray p-8 shadow-md transition-all duration-200 hover:shadow-xl rounded-lg"
         >
           <h3 class="text-2xl font-bold mb-4 text-navy-500">{{ project.title }}</h3>
           <p class="text-text-gray mb-6 leading-relaxed">{{ project.description }}</p>
