@@ -23,6 +23,7 @@ export default defineNuxtConfig({
         head: {
             title: "Calvin Chan - Full Stack Engineering Leader | 30K+ Users, 99.75% Reliability",
             link: [
+                { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
                 { rel: "preload", href: "/images/hero_image.jpg", as: "image" }
             ],
             meta: [

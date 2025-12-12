@@ -1,72 +1,41 @@
-# Task: Change Button and Card Rounding to rounded-[2px]
+# Create Simple 'CC' Favicon
 
 ## Plan
 
 ### Background
-Currently, buttons and cards use `rounded-lg` class. The user wants to change all of them to use `rounded-[2px]` (Tailwind arbitrary value) for more explicit control. Badges with `rounded-full` should remain unchanged.
+Create a simple favicon with 'CC' initials and the navy blue CTA button color (#173FC2).
 
 ### Goal
-Replace all `rounded-lg` instances on buttons and cards with `rounded-[2px]`.
+Replace the existing generic favicon with a custom 'CC' favicon matching the site's design.
 
-### Affected Files
-1. `components/Navigation.vue` - Desktop Contact button, mobile Contact button, mobile menu button
-2. `components/Contact.vue` - Contact link buttons
-3. `components/Hero.vue` - CTA button
-4. `components/Projects.vue` - Project cards and action buttons
-5. `components/Skills.vue` - Skill cards
-6. `components/WorkExperience.vue` - Experience cards and "Learn More" button
-7. `pages/work/[slug].vue` - Back to Portfolio buttons
-8. `pages/projects/[slug].vue` - All action buttons
+### Color
+- Background: `#173FC2` (navy blue from tailwind config)
+- Text: White (#FFFFFF)
 
 ### Implementation Steps
 
-- [x] Update Navigation.vue buttons from rounded-lg to rounded-[2px]
-- [x] Update Contact.vue buttons from rounded-lg to rounded-[2px]
-- [x] Update Hero.vue button from rounded-lg to rounded-[2px]
-- [x] Update Projects.vue cards and buttons from rounded-lg to rounded-[2px]
-- [x] Update Skills.vue cards from rounded-lg to rounded-[2px]
-- [x] Update WorkExperience.vue cards and button from rounded-lg to rounded-[2px]
-- [x] Update pages/work/[slug].vue buttons from rounded-lg to rounded-[2px]
-- [x] Update pages/projects/[slug].vue buttons from rounded-lg to rounded-[2px]
+- [x] Create SVG favicon with 'CC' initials on #173FC2 background
+- [x] Save as favicon.svg in /public directory
+- [x] Test in browser
 
 ## Review
 
 ### Summary
-Successfully replaced all `rounded-lg` and `rounded-md` classes with `rounded-[2px]` for all buttons and cards across the site. Badges with `rounded-full` remain unchanged.
+Created a simple, clean SVG favicon with 'CC' initials on the navy blue background (#173FC2) matching the site's CTA button color.
 
 ### Changes Made
+1. **public/favicon.svg** (new file)
+   - Created 32x32 SVG favicon
+   - Background: #173FC2 (navy blue)
+   - Text: 'CC' in white, centered, using Inter font family
+   - Bold weight (700) for better visibility at small sizes
 
-1. **components/Navigation.vue**
-   - Line 62: Desktop Contact button from `rounded-lg` to `rounded-[2px]`
-   - Line 75: Mobile menu button from `rounded-lg` to `rounded-[2px]`
-   - Line 97: Mobile Contact button from `rounded-lg` to `rounded-[2px]`
-
-2. **components/Contact.vue**
-   - Line 17: Contact link buttons from `rounded-lg` to `rounded-[2px]`
-
-3. **components/Hero.vue**
-   - Line 19: CTA button from `rounded-lg` to `rounded-[2px]`
-
-4. **components/Projects.vue**
-   - Line 11: Project cards from `rounded-lg` to `rounded-[2px]`
-   - Lines 36, 48, 58: All project action buttons from `rounded-lg` to `rounded-[2px]`
-
-5. **components/Skills.vue**
-   - Line 11: Skill cards from `rounded-lg` to `rounded-[2px]`
-
-6. **components/WorkExperience.vue**
-   - Line 13: Experience cards from `rounded-lg` to `rounded-[2px]`
-   - Line 57: "Learn More" button from `rounded-lg` to `rounded-[2px]`
-
-7. **pages/work/[slug].vue**
-   - Lines 97, 113: Back to Portfolio buttons from `rounded-lg` and `rounded-md` to `rounded-[2px]`
-
-8. **pages/projects/[slug].vue**
-   - Lines 101, 113, 127, 143: All action buttons from `rounded-lg` and `rounded-md` to `rounded-[2px]`
+2. **nuxt.config.ts**
+   - Line 26: Added favicon link tag with type "image/svg+xml"
+   - Ensures browser properly loads the SVG favicon
 
 ### Impact
-- All buttons and cards now have explicit 2px border radius using Tailwind arbitrary value syntax
-- Consistent styling across the entire site
-- Badges with `rounded-full` remain unchanged as intended
-- Total: 8 files modified, ~20 instances updated
-- Clean, minimal changes focused only on rounding values
+- Site now has a custom favicon matching the brand color
+- Simple, professional 'CC' branding
+- SVG format ensures crisp display at all sizes
+- Minimal code changes (1 new file, 1 line added to config)
