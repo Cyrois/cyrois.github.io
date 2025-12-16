@@ -6,10 +6,18 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
-          v-for="skill in skills"
+          v-for="(skill, index) in skills"
           :key="skill.title"
-          class="p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md transition-all duration-200 hover:shadow-xl rounded-[2px]"
-          :style="{ borderLeftColor: skill.color }"
+          :ref="el => skillRefs[index] = el"
+          :class="[
+            'p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md hover:shadow-xl rounded-[2px]',
+            'transition-all duration-700',
+            skillVisible[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          ]"
+          :style="{
+            borderLeftColor: skill.color,
+            transitionDelay: skillVisible[index] ? `${index * 100}ms` : '0ms'
+          }"
         >
           <div class="flex items-start gap-4 mb-4">
             <component
@@ -30,6 +38,7 @@
 <script setup>
 import skills from '@/assets/data/skills.js'
 import { Monitor, Server, Cloud, Database, ClipboardList, Users } from 'lucide-vue-next'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const iconComponents = {
   Monitor,
@@ -39,4 +48,34 @@ const iconComponents = {
   ClipboardList,
   Users
 }
+
+const skillRefs = ref([])
+const skillVisible = ref(skills.map(() => false))
+
+let observers = []
+
+onMounted(() => {
+  skillRefs.value.forEach((el, index) => {
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            skillVisible.value[index] = true
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(el)
+    observers.push(observer)
+  })
+})
+
+onBeforeUnmount(() => {
+  observers.forEach(observer => observer.disconnect())
+})
 </script>

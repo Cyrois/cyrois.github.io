@@ -1,3 +1,53 @@
+# Add Animations to Skills Section
+
+## Goal
+Add scroll animations to the Skills section:
+- Skills tiles fade in one by one with a staggered delay
+
+## Current State
+- Skills.vue component has 6 skill tiles in a grid
+- No animations currently applied
+
+## Plan
+
+### Implementation Steps
+- [x] Add IntersectionObserver to Skills.vue for the skill tiles
+- [x] Add CSS transition classes for fade-in animation
+- [x] Apply staggered delays so tiles fade in one by one (e.g., 100ms delay between each)
+- [x] Apply animation classes conditionally based on visibility state
+
+### Implementation Details
+- Will modify `/Users/cchan/Documents/personal/personal_site/components/Skills.vue`
+- Use IntersectionObserver to detect when section is visible
+- Add opacity transition with staggered delays for each tile
+- Keep animations simple and smooth (~500-600ms duration)
+- Minimal code changes - only add animations to existing elements
+
+## Review
+
+### Summary
+Successfully added scroll-triggered fade-in animations to the Skills section. Each skill tile fades in one by one with a 100ms staggered delay between them.
+
+### Changes Made
+1. **components/Skills.vue**
+   - Added IntersectionObserver setup to track visibility of each skill tile
+   - Created `skillRefs` array to hold refs for all 6 skill tiles
+   - Created `skillVisible` array to track visibility state of each tile
+   - Added fade and slide-up animation: `opacity-0 translate-y-4` → `opacity-100 translate-y-0`
+   - Applied staggered transition delay: 0ms, 100ms, 200ms, 300ms, 400ms, 500ms for tiles 1-6
+   - Set transition duration to 700ms for smooth, slower fade effect
+   - Kept existing hover shadow effect intact
+   - All tiles trigger when 20% visible (threshold: 0.2)
+
+### Implementation Approach
+- Used IntersectionObserver for each individual tile to track when it becomes visible
+- Staggered delays create a cascading fade-in effect (100ms between each tile)
+- Combined with slight upward movement (translate-y-4) for more dynamic effect
+- Once tiles become visible, observers stop watching to prevent re-triggering
+- Minimal code impact - only modified Skills.vue component
+
+---
+
 # Add Animations to About Section
 
 ## Goal
