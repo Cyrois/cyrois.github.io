@@ -26,7 +26,7 @@
       <div
         ref="textRef"
         :class="[
-          'space-y-8 text-lg text-text-gray leading-relaxed transition-all duration-700 ease-out',
+          'space-y-8 text-lg text-text-gray leading-relaxed transition-all duration-800 ease-out',
           textVisible ? 'opacity-100' : 'opacity-0'
         ]"
       >

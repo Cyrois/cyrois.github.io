@@ -10,7 +10,13 @@
           v-for="(company, index) in companies"
           :key="index"
           :id="`work-${company.slug}`"
-          class="bg-white border border-medium-gray shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden rounded-[2px]"
+          :ref="el => panelRefs[index] = el"
+          :class="[
+            'bg-white border border-medium-gray shadow-md hover:shadow-xl overflow-hidden rounded-[2px]',
+            'transition-all duration-700 ease-out',
+            panelVisible[index] ? 'opacity-100 translate-x-0' : 'opacity-0',
+            index % 2 === 0 ? (panelVisible[index] ? '' : '-translate-x-12') : (panelVisible[index] ? '' : 'translate-x-12')
+          ]"
         >
           <div class="flex flex-col md:flex-row" :class="{ 'md:flex-row-reverse': index % 2 === 1 }">
             <!-- Image Section -->
@@ -73,4 +79,35 @@
 <script setup>
 import companies from '@/assets/data/workExperience.js'
 import { getTechColor } from '@/utils/skillColors.js'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const panelRefs = ref([])
+const panelVisible = ref(companies.map(() => false))
+
+let observers = []
+
+onMounted(() => {
+  panelRefs.value.forEach((el, index) => {
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            panelVisible.value[index] = true
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(el)
+    observers.push(observer)
+  })
+})
+
+onBeforeUnmount(() => {
+  observers.forEach(observer => observer.disconnect())
+})
 </script>

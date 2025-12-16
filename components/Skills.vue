@@ -4,19 +4,18 @@
       <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 text-center text-navy-500">
         Skills & Expertise
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div ref="gridRef" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="(skill, index) in skills"
           :key="skill.title"
-          :ref="el => skillRefs[index] = el"
           :class="[
             'p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md hover:shadow-xl rounded-[2px]',
             'transition-all duration-700',
-            skillVisible[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           ]"
           :style="{
             borderLeftColor: skill.color,
-            transitionDelay: skillVisible[index] ? `${index * 100}ms` : '0ms'
+            transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
           }"
         >
           <div class="flex items-start gap-4 mb-4">
@@ -49,33 +48,32 @@ const iconComponents = {
   Users
 }
 
-const skillRefs = ref([])
-const skillVisible = ref(skills.map(() => false))
+const gridRef = ref(null)
+const isVisible = ref(false)
 
-let observers = []
+let observer = null
 
 onMounted(() => {
-  skillRefs.value.forEach((el, index) => {
-    if (!el) return
+  if (!gridRef.value) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            skillVisible.value[index] = true
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
 
-    observer.observe(el)
-    observers.push(observer)
-  })
+  observer.observe(gridRef.value)
 })
 
 onBeforeUnmount(() => {
-  observers.forEach(observer => observer.disconnect())
+  if (observer && gridRef.value) {
+    observer.unobserve(gridRef.value)
+  }
 })
 </script>

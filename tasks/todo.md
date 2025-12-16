@@ -1,3 +1,111 @@
+# Add Animations to Projects Section
+
+## Goal
+Add scroll animations to the Projects section:
+- Project cards fade in one by one with staggered delays (same as Skills section)
+
+## Current State
+- Projects.vue component has project cards in a grid
+- No animations currently applied
+
+## Plan
+
+### Implementation Steps
+- [x] Add IntersectionObserver to Projects.vue for each project card
+- [x] Add CSS transition classes for fade-in animation with slide-up
+- [x] Apply staggered delays (100ms between each card)
+- [x] Keep consistent timing with Skills section (700ms duration)
+- [x] Fix animation trigger to observe grid container instead of individual cards
+
+### Implementation Details
+- Will modify `/Users/cchan/Documents/personal/personal_site/components/Projects.vue`
+- Use IntersectionObserver to detect when cards are visible
+- Add opacity and transform transitions with staggered delays
+- Minimal code changes - only add animations to existing elements
+
+## Review
+
+### Summary
+Successfully added scroll-triggered fade-in animations to the Projects section. Each project card fades in one by one with a 100ms staggered delay, identical to the Skills section.
+
+### Changes Made
+1. **components/Projects.vue**
+   - Added IntersectionObserver to track visibility of the grid container (not individual cards)
+   - Created `gridRef` to reference the grid container
+   - Created `isVisible` boolean to track when grid becomes visible
+   - Added fade and slide-up animation: `opacity-0 translate-y-4` → `opacity-100 translate-y-0`
+   - Applied staggered transition delay: 100ms between each card
+   - Set transition duration to 700ms (consistent with Skills section)
+   - Kept existing hover shadow effect intact
+   - Grid triggers when 10% visible (threshold: 0.1)
+
+### Implementation Approach
+- Used single IntersectionObserver on grid container instead of individual cards
+- When grid becomes visible, all cards start animating with staggered delays
+- This ensures the cascade effect works even for cards not yet in viewport
+- Staggered delays create a cascading fade-in effect (100ms between each card)
+- Combined with slight upward movement (translate-y-4) for dynamic effect
+- Once grid becomes visible, observer stops watching
+- Minimal code impact - only modified Projects.vue component
+- Identical animation pattern to Skills section for consistency
+
+---
+
+# Add Animations to Work Experience Section
+
+## Goal
+Add scroll animations to the Work Experience section:
+- Work experience panels alternate sliding in from left and right
+- Even panels (0, 2, 4...) slide in from the left
+- Odd panels (1, 3, 5...) slide in from the right
+
+## Current State
+- WorkExperience.vue component has work experience panels
+- Panels already alternate their layout (flex-row-reverse for odd indices)
+- No animations currently applied
+
+## Plan
+
+### Implementation Steps
+- [x] Add IntersectionObserver to WorkExperience.vue for each panel
+- [x] Add CSS transition classes for slide-in animations (left and right)
+- [x] Apply animation classes conditionally based on index and visibility
+- [x] Keep consistent timing with other sections (700ms duration)
+
+### Implementation Details
+- Will modify `/Users/cchan/Documents/personal/personal_site/components/WorkExperience.vue`
+- Use IntersectionObserver to detect when each panel is visible
+- Add transform and opacity transitions
+- Alternate slide direction based on index (even = left, odd = right)
+- Minimal code changes - only add animations to existing elements
+
+## Review
+
+### Summary
+Successfully added scroll-triggered animations to the Work Experience section. Panels alternate sliding in from left (even) and right (odd), matching their already-alternating layout.
+
+### Changes Made
+1. **components/WorkExperience.vue**
+   - Added IntersectionObserver setup to track visibility of each work experience panel
+   - Created `panelRefs` array to hold refs for all panels
+   - Created `panelVisible` array to track visibility state of each panel
+   - Added slide-in animations based on index:
+     - Even panels (0, 2, 4...): slide from `-translate-x-12` to `translate-x-0`
+     - Odd panels (1, 3, 5...): slide from `translate-x-12` to `translate-x-0`
+   - All panels fade in: `opacity-0` → `opacity-100`
+   - Used 700ms duration with ease-out timing (consistent with other sections)
+   - Kept existing hover shadow effect intact
+   - All panels trigger when 20% visible (threshold: 0.2)
+
+### Implementation Approach
+- Used IntersectionObserver for each panel to track when it becomes visible
+- Alternating slide direction matches the existing alternating layout (flex-row-reverse)
+- Consistent 700ms duration provides smooth, cohesive animations across the site
+- Once panels become visible, observers stop watching to prevent re-triggering
+- Minimal code impact - only modified WorkExperience.vue component
+
+---
+
 # Add Animations to Skills Section
 
 ## Goal
@@ -15,6 +123,7 @@ Add scroll animations to the Skills section:
 - [x] Add CSS transition classes for fade-in animation
 - [x] Apply staggered delays so tiles fade in one by one (e.g., 100ms delay between each)
 - [x] Apply animation classes conditionally based on visibility state
+- [x] Fix animation trigger to observe grid container instead of individual tiles
 
 ### Implementation Details
 - Will modify `/Users/cchan/Documents/personal/personal_site/components/Skills.vue`
@@ -30,20 +139,22 @@ Successfully added scroll-triggered fade-in animations to the Skills section. Ea
 
 ### Changes Made
 1. **components/Skills.vue**
-   - Added IntersectionObserver setup to track visibility of each skill tile
-   - Created `skillRefs` array to hold refs for all 6 skill tiles
-   - Created `skillVisible` array to track visibility state of each tile
+   - Added IntersectionObserver to track visibility of the grid container (not individual tiles)
+   - Created `gridRef` to reference the grid container
+   - Created `isVisible` boolean to track when grid becomes visible
    - Added fade and slide-up animation: `opacity-0 translate-y-4` → `opacity-100 translate-y-0`
    - Applied staggered transition delay: 0ms, 100ms, 200ms, 300ms, 400ms, 500ms for tiles 1-6
    - Set transition duration to 700ms for smooth, slower fade effect
    - Kept existing hover shadow effect intact
-   - All tiles trigger when 20% visible (threshold: 0.2)
+   - Grid triggers when 10% visible (threshold: 0.1)
 
 ### Implementation Approach
-- Used IntersectionObserver for each individual tile to track when it becomes visible
+- Used single IntersectionObserver on grid container instead of individual tiles
+- When grid becomes visible, all tiles start animating with staggered delays
+- This ensures the cascade effect works even for tiles not yet in viewport (like the second row)
 - Staggered delays create a cascading fade-in effect (100ms between each tile)
 - Combined with slight upward movement (translate-y-4) for more dynamic effect
-- Once tiles become visible, observers stop watching to prevent re-triggering
+- Once grid becomes visible, observer stops watching
 - Minimal code impact - only modified Skills.vue component
 
 ---

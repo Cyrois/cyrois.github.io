@@ -4,11 +4,18 @@
       <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-16 text-center text-navy-500">
         Featured Projects
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div ref="gridRef" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
-          v-for="project in projects"
+          v-for="(project, index) in projects"
           :key="project.title"
-          class="bg-white border border-medium-gray p-8 shadow-md transition-all duration-200 hover:shadow-xl rounded-[2px]"
+          :class="[
+            'bg-white border border-medium-gray p-8 shadow-md hover:shadow-xl rounded-[2px]',
+            'transition-all duration-700',
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          ]"
+          :style="{
+            transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
+          }"
         >
           <h3 class="text-2xl font-bold mb-4 text-navy-500">{{ project.title }}</h3>
           <p class="text-text-gray mb-6 leading-relaxed">{{ project.description }}</p>
@@ -78,4 +85,34 @@
 <script setup>
 import projects from '@/assets/data/projects.js'
 import { getTechColor } from '@/utils/skillColors.js'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const gridRef = ref(null)
+const isVisible = ref(false)
+
+let observer = null
+
+onMounted(() => {
+  if (!gridRef.value) return
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
+
+  observer.observe(gridRef.value)
+})
+
+onBeforeUnmount(() => {
+  if (observer && gridRef.value) {
+    observer.unobserve(gridRef.value)
+  }
+})
 </script>
