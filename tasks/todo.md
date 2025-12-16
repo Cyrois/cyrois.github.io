@@ -1,41 +1,36 @@
-# Create Simple 'CC' Favicon
+# Round the Edges of the Favicon
+
+## Problem
+The current favicon has sharp square edges and needs rounded corners for a softer, more modern look.
+
+## Current State
+- favicon.svg has a `<rect>` element with no border-radius/rounded corners
+- Current dimensions: 32x32 pixels with navy blue background (#173FC2) and white 'CC' text
 
 ## Plan
 
-### Background
-Create a simple favicon with 'CC' initials and the navy blue CTA button color (#173FC2).
-
-### Goal
-Replace the existing generic favicon with a custom 'CC' favicon matching the site's design.
-
-### Color
-- Background: `#173FC2` (navy blue from tailwind config)
-- Text: White (#FFFFFF)
-
 ### Implementation Steps
+- [x] Add rounded corners to the SVG favicon by adding `rx` attribute to the rect element
+- [x] Test the changes visually in browser
 
-- [x] Create SVG favicon with 'CC' initials on #173FC2 background
-- [x] Save as favicon.svg in /public directory
-- [x] Test in browser
+### Implementation Details
+- Will modify `/Users/cchan/Documents/personal/personal_site/public/favicon.svg`
+- Add `rx` attribute to the `<rect>` element (rx="4" for subtle rounding)
+- Keep changes minimal - only modify the rect element with one attribute
 
 ## Review
 
 ### Summary
-Created a simple, clean SVG favicon with 'CC' initials on the navy blue background (#173FC2) matching the site's CTA button color.
+Successfully added rounded corners to the favicon by adding a single `rx` attribute to the SVG rect element.
 
 ### Changes Made
-1. **public/favicon.svg** (new file)
-   - Created 32x32 SVG favicon
-   - Background: #173FC2 (navy blue)
-   - Text: 'CC' in white, centered, using Inter font family
-   - Bold weight (700) for better visibility at small sizes
-
-2. **nuxt.config.ts**
-   - Line 26: Added favicon link tag with type "image/svg+xml"
-   - Ensures browser properly loads the SVG favicon
+1. **public/favicon.svg** (line 2)
+   - Added `rx="4"` attribute to the `<rect>` element
+   - Creates subtle rounded corners on the favicon background
+   - Single attribute change - minimal and simple modification
 
 ### Impact
-- Site now has a custom favicon matching the brand color
-- Simple, professional 'CC' branding
-- SVG format ensures crisp display at all sizes
-- Minimal code changes (1 new file, 1 line added to config)
+- Favicon now has softer, more modern rounded corners instead of sharp square edges
+- Maintains all existing colors and styling (#173FC2 background, white 'CC' text)
+- No other files modified - isolated change to SVG only
+- The rounded corners will be visible in browser tabs and bookmarks
