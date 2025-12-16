@@ -13,7 +13,7 @@
           :ref="el => panelRefs[index] = el"
           :class="[
             'bg-white border border-medium-gray shadow-md hover:shadow-xl overflow-hidden rounded-[2px]',
-            'transition-all duration-700 ease-out',
+            'transition-all duration-1000 md:duration-700 ease-out',
             panelVisible[index] ? 'opacity-100 translate-x-0' : 'opacity-0',
             index % 2 === 0 ? (panelVisible[index] ? '' : '-translate-x-12') : (panelVisible[index] ? '' : 'translate-x-12')
           ]"

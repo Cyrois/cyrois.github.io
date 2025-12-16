@@ -3,7 +3,7 @@ export default {
   description: "I'm always open to discussing new opportunities, interesting projects, or technical challenges.",
   links: [
     {
-      label: 'LinkedIn',
+      label: 'Get in Touch',
       url: 'https://linkedin.com/in/chancalvink',
       target: '_blank'
     },

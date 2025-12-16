@@ -10,7 +10,7 @@
           :key="skill.title"
           :class="[
             'p-8 bg-white border-l-4 border-t border-r border-b border-medium-gray shadow-md hover:shadow-xl rounded-[2px]',
-            'transition-all duration-700',
+            'transition-all duration-1000 md:duration-700',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           ]"
           :style="{

@@ -10,7 +10,7 @@
           :key="project.title"
           :class="[
             'bg-white border border-medium-gray p-8 shadow-md hover:shadow-xl rounded-[2px]',
-            'transition-all duration-700',
+            'transition-all duration-1000 md:duration-700',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           ]"
           :style="{

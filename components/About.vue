@@ -12,7 +12,7 @@
           :key="index"
           :ref="el => statRefs[index] = el"
           :class="[
-            'text-center p-6 bg-light-gray rounded-lg border border-medium-gray shadow-md transition-all duration-700 ease-out',
+            'text-center p-6 bg-light-gray rounded-lg border border-medium-gray shadow-md transition-all duration-1000 md:duration-700 ease-out',
             statVisible[index] ? 'opacity-100 translate-x-0' : 'opacity-0',
             index === 0 ? (statVisible[index] ? '' : '-translate-x-12') : (statVisible[index] ? '' : 'translate-x-12')
           ]"
@@ -26,7 +26,7 @@
       <div
         ref="textRef"
         :class="[
-          'space-y-8 text-lg text-text-gray leading-relaxed transition-all duration-800 ease-out',
+          'space-y-8 text-lg text-text-gray leading-relaxed transition-all duration-1000 md:duration-800 ease-out',
           textVisible ? 'opacity-100' : 'opacity-0'
         ]"
       >

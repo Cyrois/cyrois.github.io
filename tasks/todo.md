@@ -1,3 +1,53 @@
+# Slow Down Animations on Mobile
+
+## Goal
+Make all scroll animations slower on mobile devices for better user experience.
+
+## Current State
+- All animations use 700ms duration (800ms for About text)
+- Same duration across all screen sizes
+
+## Plan
+
+### Implementation Steps
+- [x] Update About section animations to be slower on mobile
+- [x] Update Skills section animations to be slower on mobile
+- [x] Update Projects section animations to be slower on mobile
+- [x] Update Work Experience section animations to be slower on mobile
+
+### Implementation Details
+- Use Tailwind's responsive duration classes
+- Mobile: 1000ms duration
+- Desktop (md and up): Keep original durations (700ms/800ms)
+
+## Review
+
+### Summary
+Successfully slowed down all animations on mobile devices using Tailwind's responsive classes. All animations now take 1000ms on mobile and revert to their original speeds (700ms/800ms) on desktop.
+
+### Changes Made
+1. **components/About.vue**
+   - Stats: `duration-700` → `duration-1000 md:duration-700`
+   - Text: `duration-800` → `duration-1000 md:duration-800`
+
+2. **components/Skills.vue**
+   - Skill tiles: `duration-700` → `duration-1000 md:duration-700`
+
+3. **components/Projects.vue**
+   - Project cards: `duration-700` → `duration-1000 md:duration-700`
+
+4. **components/WorkExperience.vue**
+   - Work panels: `duration-700` → `duration-1000 md:duration-700`
+
+### Implementation Approach
+- Used Tailwind's responsive modifiers (md:) to apply different durations
+- Mobile (< 768px): 1000ms animations for smoother, more visible transitions
+- Desktop (≥ 768px): Original durations for snappier feel
+- Consistent 1000ms on mobile across all sections for cohesive experience
+- Minimal code changes - only updated duration classes
+
+---
+
 # Add Animations to Projects Section
 
 ## Goal
