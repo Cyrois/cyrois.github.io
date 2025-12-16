@@ -10,7 +10,12 @@
         <div
           v-for="(stat, index) in aboutData.stats"
           :key="index"
-          class="text-center p-6 bg-light-gray rounded-lg border border-medium-gray shadow-md"
+          :ref="el => statRefs[index] = el"
+          :class="[
+            'text-center p-6 bg-light-gray rounded-lg border border-medium-gray shadow-md transition-all duration-700 ease-out',
+            statVisible[index] ? 'opacity-100 translate-x-0' : 'opacity-0',
+            index === 0 ? (statVisible[index] ? '' : '-translate-x-12') : (statVisible[index] ? '' : 'translate-x-12')
+          ]"
         >
           <div class="text-4xl font-bold text-navy mb-2">{{ stat.value }}</div>
           <div class="text-lg font-semibold text-text-dark mb-1">{{ stat.label }}</div>
@@ -18,9 +23,15 @@
         </div>
       </div>
 
-      <div class="space-y-8 text-lg text-text-gray leading-relaxed">
+      <div
+        ref="textRef"
+        :class="[
+          'space-y-8 text-lg text-text-gray leading-relaxed transition-all duration-700 ease-out',
+          textVisible ? 'opacity-100' : 'opacity-0'
+        ]"
+      >
         <p v-for="(paragraph, index) in aboutData.paragraphs" :key="index" v-html="paragraph">
-          
+
         </p>
       </div>
     </div>
@@ -29,4 +40,56 @@
 
 <script setup>
 import aboutData from '@/assets/data/about.js'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const statRefs = ref([])
+const statVisible = ref([false, false])
+const textRef = ref(null)
+const textVisible = ref(false)
+
+let observers = []
+
+onMounted(() => {
+  // Observe each stat
+  statRefs.value.forEach((el, index) => {
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            statVisible.value[index] = true
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(el)
+    observers.push(observer)
+  })
+
+  // Observe text section
+  if (textRef.value) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            textVisible.value = true
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(textRef.value)
+    observers.push(observer)
+  }
+})
+
+onBeforeUnmount(() => {
+  observers.forEach(observer => observer.disconnect())
+})
 </script>
