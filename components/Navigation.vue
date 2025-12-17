@@ -28,42 +28,19 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-10">
-          <a href="/#home" :class="[
-            'text-sm font-medium uppercase tracking-wide transition-all duration-200 hover:scale-105 border-b-2 border-transparent hover:border-current focus:outline-none focus:ring-2 focus:ring-offset-2',
-            isScrolled
-              ? 'text-text-dark hover:text-navy focus:ring-navy'
-              : 'text-white hover:text-gray-200 focus:ring-white'
-          ]">Home</a>
-          <a href="/#about" :class="[
-            'text-sm font-medium uppercase tracking-wide transition-all duration-200 hover:scale-105 border-b-2 border-transparent hover:border-current focus:outline-none focus:ring-2 focus:ring-offset-2',
-            isScrolled
-              ? 'text-text-dark hover:text-navy focus:ring-navy'
-              : 'text-white hover:text-gray-200 focus:ring-white'
-          ]">About</a>
-          <a href="/#skills" :class="[
-            'text-sm font-medium uppercase tracking-wide transition-all duration-200 hover:scale-105 border-b-2 border-transparent hover:border-current focus:outline-none focus:ring-2 focus:ring-offset-2',
-            isScrolled
-              ? 'text-text-dark hover:text-navy focus:ring-navy'
-              : 'text-white hover:text-gray-200 focus:ring-white'
-          ]">Skills</a>
-          <a href="/#work-experience" :class="[
-            'text-sm font-medium uppercase tracking-wide transition-all duration-200 hover:scale-105 border-b-2 border-transparent hover:border-current focus:outline-none focus:ring-2 focus:ring-offset-2',
-            isScrolled
-              ? 'text-text-dark hover:text-navy focus:ring-navy'
-              : 'text-white hover:text-gray-200 focus:ring-white'
-          ]">Experience</a>
-          <a href="/#projects" :class="[
-            'text-sm font-medium uppercase tracking-wide transition-all duration-200 hover:scale-105 border-b-2 border-transparent hover:border-current focus:outline-none focus:ring-2 focus:ring-offset-2',
-            isScrolled
-              ? 'text-text-dark hover:text-navy focus:ring-navy'
-              : 'text-white hover:text-gray-200 focus:ring-white'
-          ]">Projects</a>
-          <a href="/#contact" :class="[
-            'border-2 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 rounded-[2px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy',
-            isScrolled
-              ? 'border-navy text-navy hover:bg-navy hover:text-white'
-              : 'border-white text-white hover:bg-white hover:text-navy'
-          ]">Contact</a>
+          <a
+            v-for="link in navLinks"
+            :key="link.href"
+            :href="link.href"
+            :class="[
+              link.isButton
+                ? 'border-2 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 rounded-[2px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy'
+                : 'text-sm font-medium uppercase tracking-wide transition-all duration-200 hover:scale-105 border-b-2 border-transparent hover:border-current focus:outline-none focus:ring-2 focus:ring-offset-2',
+              isScrolled
+                ? (link.isButton ? 'border-navy text-navy hover:bg-navy hover:text-white' : 'text-text-dark hover:text-navy focus:ring-navy')
+                : (link.isButton ? 'border-white text-white hover:bg-white hover:text-navy' : 'text-white hover:text-gray-200 focus:ring-white')
+            ]"
+          >{{ link.label }}</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -89,12 +66,18 @@
     <!-- Mobile Menu -->
     <div v-if="mobileMenuOpen" class="md:hidden border-t border-medium-gray bg-white">
       <div class="px-4 pt-2 pb-3 space-y-1">
-        <a href="/#home" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Home</a>
-        <a href="/#about" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">About</a>
-        <a href="/#skills" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Skills</a>
-        <a href="/#work-experience" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Experience</a>
-        <a href="/#projects" @click="mobileMenuOpen = false" class="block px-3 py-3 text-text-dark hover:text-navy hover:bg-light-gray rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">Projects</a>
-        <a href="/#contact" @click="mobileMenuOpen = false" class="block px-3 py-3 text-white bg-navy hover:bg-navy-500 rounded-[2px] transition-colors duration-200 font-semibold text-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">Contact</a>
+        <a
+          v-for="link in navLinks"
+          :key="link.href"
+          :href="link.href"
+          @click="mobileMenuOpen = false"
+          :class="[
+            'block px-3 py-3 rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2',
+            link.isButton
+              ? 'text-white bg-navy hover:bg-navy-500 rounded-[2px] font-semibold text-center focus:ring-white'
+              : 'text-text-dark hover:text-navy hover:bg-light-gray focus:ring-navy'
+          ]"
+        >{{ link.label }}</a>
       </div>
     </div>
   </nav>
@@ -103,6 +86,15 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+
+const navLinks = [
+  { href: '/#home', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#work-experience', label: 'Experience' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#contact', label: 'Contact', isButton: true }
+]
 
 const mobileMenuOpen = ref(false)
 const scrolled = ref(false)

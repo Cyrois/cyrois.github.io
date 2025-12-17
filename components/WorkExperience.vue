@@ -43,18 +43,11 @@
               </p>
 
               <div class="flex flex-wrap gap-2 mb-6">
-                <span
+                <TechBadge
                   v-for="tech in company.technologies"
                   :key="tech"
-                  class="text-sm px-4 py-2 border-2 font-medium rounded-full"
-                  :style="{
-                    color: getTechColor(tech),
-                    borderColor: getTechColor(tech),
-                    backgroundColor: getTechColor(tech) + '20'
-                  }"
-                >
-                  {{ tech }}
-                </span>
+                  :tech="tech"
+                />
               </div>
 
               <div>
@@ -78,36 +71,9 @@
 
 <script setup>
 import companies from '@/assets/data/workExperience.js'
-import { getTechColor } from '@/utils/skillColors.js'
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useScrollAnimation } from '@/composables/useScrollAnimation.js'
 
-const panelRefs = ref([])
-const panelVisible = ref(companies.map(() => false))
-
-let observers = []
-
-onMounted(() => {
-  panelRefs.value.forEach((el, index) => {
-    if (!el) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            panelVisible.value[index] = true
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
-
-    observer.observe(el)
-    observers.push(observer)
-  })
-})
-
-onBeforeUnmount(() => {
-  observers.forEach(observer => observer.disconnect())
+const { elementRefs: panelRefs, isVisibleArray: panelVisible } = useScrollAnimation({
+  count: companies.length
 })
 </script>

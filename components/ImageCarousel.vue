@@ -74,6 +74,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const TRANSITION_DURATION = 300
+
 const props = defineProps({
   images: {
     type: Array,
@@ -93,7 +95,7 @@ const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % props.images.length
   setTimeout(() => {
     isTransitioning.value = false
-  }, 300)
+  }, TRANSITION_DURATION)
 }
 
 // Navigate to previous slide
@@ -103,7 +105,7 @@ const prevSlide = () => {
   currentIndex.value = (currentIndex.value - 1 + props.images.length) % props.images.length
   setTimeout(() => {
     isTransitioning.value = false
-  }, 300)
+  }, TRANSITION_DURATION)
 }
 
 // Navigate to specific slide
@@ -113,7 +115,7 @@ const goToSlide = (index) => {
   currentIndex.value = index
   setTimeout(() => {
     isTransitioning.value = false
-  }, 300)
+  }, TRANSITION_DURATION)
 }
 
 // Handle touch start

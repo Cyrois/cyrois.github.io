@@ -58,18 +58,11 @@
       <section class="mb-12">
         <h2 class="text-3xl font-bold mb-6 text-navy">Technologies Used</h2>
         <div class="flex flex-wrap gap-3">
-          <span
+          <TechBadge
             v-for="tech in company.technologies"
             :key="tech"
-            class="text-sm px-4 py-2 border-2 font-medium rounded-full"
-            :style="{
-              color: getTechColor(tech),
-              borderColor: getTechColor(tech),
-              backgroundColor: getTechColor(tech) + '20'
-            }"
-          >
-            {{ tech }}
-          </span>
+            :tech="tech"
+          />
         </div>
       </section>
 
@@ -122,16 +115,22 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import companies from '@/assets/data/workExperience.js'
-import ImageCarousel from '@/components/ImageCarousel.vue'
-import { getTechColor } from '@/utils/skillColors.js'
 
 const route = useRoute()
 const slug = route.params.slug
 
 const company = computed(() => companies.find(c => c.slug === slug))
 
+// Handle 404 if company not found
+if (!company.value) {
+  throw createError({
+    statusCode: 404,
+    message: 'Work experience not found'
+  })
+}
+
 // Set page title
 useHead({
-  title: company.value ? `${company.value.name} - Work Experience` : 'Work Experience Not Found'
+  title: `${company.value.name} - Work Experience`
 })
 </script>
