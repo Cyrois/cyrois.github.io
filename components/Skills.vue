@@ -37,7 +37,7 @@
 <script setup>
 import skills from '@/assets/data/skills.js'
 import { Monitor, Server, Cloud, Database, ClipboardList, Users } from 'lucide-vue-next'
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useScrollAnimation } from '@/composables/useScrollAnimation.js'
 
 const iconComponents = {
   Monitor,
@@ -48,32 +48,5 @@ const iconComponents = {
   Users
 }
 
-const gridRef = ref(null)
-const isVisible = ref(false)
-
-let observer = null
-
-onMounted(() => {
-  if (!gridRef.value) return
-
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          isVisible.value = true
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.1 }
-  )
-
-  observer.observe(gridRef.value)
-})
-
-onBeforeUnmount(() => {
-  if (observer && gridRef.value) {
-    observer.unobserve(gridRef.value)
-  }
-})
+const { elementRef: gridRef, isVisible } = useScrollAnimation({ threshold: 0.1 })
 </script>

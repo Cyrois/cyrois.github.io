@@ -40,56 +40,11 @@
 
 <script setup>
 import aboutData from '@/assets/data/about.js'
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useScrollAnimation } from '@/composables/useScrollAnimation.js'
 
-const statRefs = ref([])
-const statVisible = ref([false, false])
-const textRef = ref(null)
-const textVisible = ref(false)
+// Scroll animation for stats (2 elements)
+const { elementRefs: statRefs, isVisibleArray: statVisible } = useScrollAnimation({ count: 2 })
 
-let observers = []
-
-onMounted(() => {
-  // Observe each stat
-  statRefs.value.forEach((el, index) => {
-    if (!el) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            statVisible.value[index] = true
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
-
-    observer.observe(el)
-    observers.push(observer)
-  })
-
-  // Observe text section
-  if (textRef.value) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            textVisible.value = true
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
-
-    observer.observe(textRef.value)
-    observers.push(observer)
-  }
-})
-
-onBeforeUnmount(() => {
-  observers.forEach(observer => observer.disconnect())
-})
+// Scroll animation for text section (single element)
+const { elementRef: textRef, isVisible: textVisible } = useScrollAnimation()
 </script>
